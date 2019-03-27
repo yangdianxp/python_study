@@ -104,6 +104,6 @@ venv.bak/
 .mypy_cache/
 
 # vs project 
-vsproject/
+.vs/
 源码【北京尚学堂·百战程序员】/
 python_study.pyproj
