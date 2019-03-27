@@ -1,8 +1,20 @@
-a = True
-b = False
-print(b or 30)
+x = y = -1000
+z = -1000
+print(id(x))
+print(id(y))
+print(id(z))
 
-aaa = 40
+
+#a = 1000
+#b = 1000
+#print(id(a))
+#print(id(b))
+#print(a == b)
+#print(a is b)
+
+#a = True
+#b = False
+#print(b or 30)
 
 #import turtle
 #import math
