@@ -1,8 +1,12 @@
-x = y = -1000
-z = -1000
-print(id(x))
-print(id(y))
-print(id(z))
+print(ord('A'))
+print(ord('杨'))
+print(chr(67))
+
+#x = y = -1000
+#z = -1000
+#print(id(x))
+#print(id(y))
+#print(id(z))
 
 
 #a = 1000
