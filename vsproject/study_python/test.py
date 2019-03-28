@@ -1,6 +1,38 @@
-print(ord('A'))
-print(ord('杨'))
-print(chr(67))
+a = "abcdefg"
+print(a[1:])
+print(a[1:5])
+print(a[1:5:2])
+print(a[-3:])
+print(a[-6:-3])
+print(a[::-1])
+
+#a = "acbcdc"
+#a = a.replace("c", "杨")
+#print(a)
+
+
+#a = "中国人民"
+#a = a.replace("中国", "哈哈")
+#print(a)
+
+#print(str(3.14e30))
+
+#my_name = input("请输入姓名：")
+#print(my_name)
+
+
+#print("aaa", end = "")
+#print("bbb", end = "*")
+#print("ccc")
+#print("ddd")
+
+#a = "aaa""bbb" 'ccc'
+#a *= 3
+#print(a)
+
+#print(ord('A'))
+#print(ord('杨'))
+#print(chr(67))
 
 #x = y = -1000
 #z = -1000
