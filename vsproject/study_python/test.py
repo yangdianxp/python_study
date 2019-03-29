@@ -1,10 +1,79 @@
-a = "abcdefg"
-print(a[1:])
-print(a[1:5])
-print(a[1:5:2])
-print(a[-3:])
-print(a[-6:-3])
-print(a[::-1])
+a = "abc"
+li = ["abc", "a"]
+li1 = ["abc", "a"]
+print("{}, {}".format(id(a), id(li[0])))
+print("{}, {}".format(id(li), id(li1)))
+
+#a = 0b11011011
+#b = 0b01100101
+#c = a | b
+#print(bin(c))
+
+#a = 4 
+#print(3 < a < 10)
+
+#import io
+#s = "Hello, sxt"
+#sio = io.StringIO(s)
+#print(sio.getvalue())
+#sio.seek(7)
+#sio.write("GGGG")
+#print(sio.getvalue())
+
+
+##对齐填充
+#a = "{:*>8}".format("245")
+#print(a)
+#a = "{:*^8}".format("245")
+#print(a)
+#a = "{:#<8}".format("245")
+#print(a)
+
+#a = "我是{name}, 我身高{height}"
+#a = a.format(height = 163, name = "杨电")
+#print(a)
+
+#a = "aaa_33"
+#b = "aaa_33"
+##print(a is b)
+
+#a = "_aaa#?.33"
+#b = "_aaa#?.33"
+##print(a is b)
+
+#a = a.strip("_")
+#a = a.rstrip("33")
+#print(a)
+
+#import time
+
+#time1 = time.time()
+#a = ""
+#for i in range(1000000):
+#    a += "axt"
+#time2 = time.time()
+#print("花费时间：" + str(time2 - time1))
+
+#time3 = time.time()
+#li = []
+#for i in range(1000000):
+#    li.append("axt")
+#a = "".join(li)
+#time4 = time.time()
+#print("花费时间：" + str(time4 - time3))
+
+
+#strings = ["hao", "ba", "xi"]
+#a = "*".join(strings)
+#print(a)
+
+#a = "abcdefg"
+#print(a[1:])
+#print(a[1:5])
+#print(a[1:5:2])
+#print(a[-3:])
+#print(a[-6:-3])
+#print(a[::-1])
 
 #a = "acbcdc"
 #a = a.replace("c", "杨")
