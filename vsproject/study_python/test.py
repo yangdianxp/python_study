@@ -1,8 +1,24 @@
-a = "abc"
-li = ["abc", "a"]
-li1 = ["abc", "a"]
-print("{}, {}".format(id(a), id(li[0])))
-print("{}, {}".format(id(li), id(li1)))
+a = [20, 30]
+print(id(a))
+print(a)
+a.append(50)
+print(id(a))
+print(a)
+
+#print("yang".split("*****"))
+
+#a = list("yang")
+#print(a)
+#print("aaa".join(a))
+
+#a = list(range(10))
+#print(a)
+
+#a = "abc"
+#li = ["abc", "a"]
+#li1 = ["abc", "a"]
+#print("{}, {}".format(id(a), id(li[0])))
+#print("{}, {}".format(id(li), id(li1)))
 
 #a = 0b11011011
 #b = 0b01100101
