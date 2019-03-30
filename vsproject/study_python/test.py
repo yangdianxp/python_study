@@ -1,9 +1,12 @@
-a = [20, 30]
-print(id(a))
-print(a)
-a.append(50)
-print(id(a))
-print(a)
+from datetime import datetime
+print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+
+#a = [20, 30]
+#print(id(a))
+#print(a)
+#a.append(50)
+#print(id(a))
+#print(a)
 
 #print("yang".split("*****"))
 
