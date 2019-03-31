@@ -1,10 +1,19 @@
-d = dict.fromkeys(["age", "height", "weight"])
+#d = dict.fromkeys(["age", "height", "weight"])
+#print(d)
+
+k = ["age", "height", "weight"]
+v = [16, 18, 20]
+d = dict(zip(k, v))
 print(d)
 
-#k = ["age", "height", "weight"]
-#v = [16, 18, 20]
-#d = dict(zip(k, v))
-#print(d)
+e = {"a":16, "b":18, "c":20}
+
+print(d.update(e))
+print(d)
+
+#for i in e.items():
+#    print("{}, {}".format(i[0], i[1]))
+
 
 
 #a = (1, 2, 3)
