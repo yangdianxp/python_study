@@ -1,5 +1,48 @@
-from datetime import datetime
-print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+d = dict.fromkeys(["age", "height", "weight"])
+print(d)
+
+#k = ["age", "height", "weight"]
+#v = [16, 18, 20]
+#d = dict(zip(k, v))
+#print(d)
+
+
+#a = (1, 2, 3)
+#dict = {}
+#dict[a] = "aaaa"
+
+#s = (x * 3 for x in range(5))
+#print(s.__next__())
+#print(s.__next__())
+#print(s.__next__())
+#print(s.__next__())
+#print(s.__next__())
+#try:
+#    print(s.__next__())
+#except:
+#    print("aaa")
+
+
+#b = [10, 20, 30, 40]
+#c = [50, 60, 70, 80]
+#d = [100, 200, 300, 400]
+#print(list(zip(b, c, d)))
+
+#b = (10, 20, 30, 40)
+#c = (50, 60, 70, 80)
+#d = (100, 200, 300, 400)
+#print(tuple(zip(b, c, d)))
+
+#a = [10, 20, 30, 40]
+#b = (10, 20, 30, 40)
+#if a == b:
+#    print(True)
+#c = reversed(a)
+#print(c)
+#print(id(c))
+
+#from datetime import datetime
+#print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 
 #a = [20, 30]
 #print(id(a))
