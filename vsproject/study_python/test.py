@@ -1,10 +1,55 @@
-s = """ aaaaaaaaaaaaaaaaa\ 
-aaaaaaaaaaaas"""
-print(s)
+num = 5
+print(num if num < 10 else 20)
+print(num if num > 10 else 20)
 
-s = "aaaaaaaaaaaaaaaaaaaaaaaaaa\
-    aaaaaaaaaaaaaaaaaaa"
-print(s)
+#b = []
+
+#if not b:
+#    print(b)
+
+#thisset = set(("Google", "Runoob", "Taobao"))
+#thisset.update({1,3})
+#print(thisset)
+#thisset.update([1,4],[5,6])  
+#print(thisset)
+#e = {"a":16, "b":18, "c":20}
+#thisset.update(e) 
+#print(thisset)
+
+#a = {1, 2, 3}
+#b = {3, 4, 5}
+#d = a.union(b)
+#print(d)
+#d = a.intersection(b)
+#print(d)
+#d = a.difference(b)
+#print(d)
+
+#k = ["age", "height", "weight"]
+#v = [16, 18, 20]
+#d = dict(zip(k, v))
+#print(d)
+
+#x, y, z = d
+#print(x)
+#print(y)
+#print(z)
+#x, y, z = d.values()
+#print(x)
+#print(y)
+#print(z)
+#x, y, z = d.items()
+#print(x)
+#print(y)
+#print(z)
+
+#s = """ aaaaaaaaaaaaaaaaa\ 
+#aaaaaaaaaaaas"""
+#print(s)
+
+#s = "aaaaaaaaaaaaaaaaaaaaaaaaaa\
+#    aaaaaaaaaaaaaaaaaaa"
+#print(s)
 
 #d = dict.fromkeys(["age", "height", "weight"])
 #print(d)
