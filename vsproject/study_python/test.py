@@ -1,6 +1,28 @@
-num = 5
-print(num if num < 10 else 20)
-print(num if num > 10 else 20)
+cells = [(row, col) for row in range(1, 10) if row % 2 == 0\
+         for col in range(1, 10) if col % 3 == 0]
+print(cells)
+
+#names = ["yang", "dian", "li", "yan"]
+#ages = [1, 2, 3, 4]
+#jobs = ["laoshi", "cc", "bb"]
+
+#for n, a, j in zip(names, ages, jobs):
+#    print("{}, {}, {}".format(n, a, j))
+
+#e = {"a":16, "b":18, "c":20}
+
+#for i in e:
+#    print(i, end = " ")
+#print()
+#for i in e.keys():
+#    print(i, end = " ")
+#print()
+#for i in e.values():
+#    print(i, end = " ")
+
+#num = 5
+#print(num if num < 10 else 20)
+#print(num if num > 10 else 20)
 
 #b = []
 
