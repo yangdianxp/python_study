@@ -1,6 +1,36 @@
-cells = [(row, col) for row in range(1, 10) if row % 2 == 0\
-         for col in range(1, 10) if col % 3 == 0]
-print(cells)
+def test(x, y, z):
+    return [x*10, y*10, z*10]
+
+print(test(1, 2, 3))
+
+#def test():
+#    '''aaaaaabbbbbbbbbbbb'''
+#    print("aaa")
+
+##print(help(test))
+#help(test, __doc__)
+
+#print(test)
+#print(id(test))
+#print(type(test))
+
+
+#import turtle
+
+#t = turtle.Pen()
+#for i in range(1, 200, 10):
+#    t.penup()
+#    t.goto(0, -i)
+#    t.pendown()
+#    t.circle(i)
+
+
+#for i in (x for x in range(1, 10)):
+#    print(i)
+
+#cells = [(row, col) for row in range(1, 10) if row % 2 == 0\
+#         for col in range(1, 10) if col % 3 == 0]
+#print(cells)
 
 #names = ["yang", "dian", "li", "yan"]
 #ages = [1, 2, 3, 4]
