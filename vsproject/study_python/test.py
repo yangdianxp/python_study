@@ -1,5 +1,38 @@
-d = dict(a = 100, b = 200)
-print(eval("a+b", d))
+def first():
+    a = 20
+    def second():
+        nonlocal a
+        a = 30
+        def third():
+            nonlocal a
+            a = 40
+        third()
+    second()
+    print(a)
+
+first()
+
+
+
+#a = 10
+
+#def outer():
+#    global a
+#    b = 10
+#    a = 20
+#    def inner():
+#        global a
+#        nonlocal b
+#        b = 20
+#        a = 40
+#    inner()
+#    print(b)
+
+#outer()
+#print(a)
+
+#d = dict(a = 100, b = 200)
+#print(eval("a+b", d))
 
 #a = 10
 #b = 20
