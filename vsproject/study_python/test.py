@@ -1,7 +1,98 @@
-def test(x, y, z):
-    return [x*10, y*10, z*10]
+d = dict(a = 100, b = 200)
+print(eval("a+b", d))
 
-print(test(1, 2, 3))
+#a = 10
+#b = 20
+
+#print(eval("a+b"))
+
+#g = [lambda a : a + 2, lambda a : a * 2, lambda a : a ** 2]
+#print(g[0](3), g[1](3), g[2](3))
+
+#f = lambda a, b, c : a+b+c 
+#print(f)
+#print(id(f))
+#print(type(f))
+#print(f(1, 2, 3))
+
+#def func(a, b, *c):
+#    print(a, b, c)
+
+#def func1(a, b, **c):
+#    print(a, b, c)
+
+#def func2(a, b, *c, **d):
+#    print(a, b, c, d)
+
+#func(1, 2, 3, 4, 5, 6)
+#func1(1, 2, name="yangdian", age=18)
+#func2(1, 2, 3, 4, name="yangdian", age=18)
+
+
+#import copy
+
+#引用拷贝
+#a = [10, 20, [100, 200]]
+#b = a
+#print("id(a):{}".format(id(a)))
+#print("id(b):{}".format(id(b)))
+#b.append(30)
+#b[2].append(300)
+#print(a)
+#print(b)
+
+#浅拷贝
+#a = [10, 20, [100, 200]]
+#b = copy.copy(a)
+#print("id(a):{}".format(id(a)))
+#print("id(b):{}".format(id(b)))
+#b.append(30)
+#b[2].append(300)
+#print(a)
+#print(b)
+
+#深拷贝
+#a = [10, 20, [100, 200]]
+#b = copy.deepcopy(a)
+#print("id(a):{}".format(id(a)))
+#print("id(b):{}".format(id(b)))
+#b.append(30)
+#b[2].append(300)
+#print(a)
+#print(b)
+
+#import math
+#import time
+#b = copy.copy(a)
+#print(id(a))
+#print(id(b))
+
+
+#def test1():
+#    func = math.sqrt
+#    time1 = time.time()
+#    for i in range(10000000):
+#        func(30)
+#    time2 = time.time()
+#    print(time2 - time1)
+
+#def test2():
+#    time1 = time.time()
+#    for i in range(10000000):
+#        math.sqrt(30)
+#    time2 = time.time()
+#    print(time2 - time1)
+
+#test1()
+#test2()
+
+
+#def test(x, y, z):
+#    print(locals())
+#    return [x*10, y*10, z*10]
+
+#print(test(1, 2, 3))
+#print(globals())
 
 #def test():
 #    '''aaaaaabbbbbbbbbbbb'''
