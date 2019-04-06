@@ -1,16 +1,37 @@
-def first():
-    a = 20
-    def second():
-        nonlocal a
-        a = 30
-        def third():
-            nonlocal a
-            a = 40
-        third()
-    second()
-    print(a)
+class Student:
+    def __init__(self, name, score):
+        self.name = name
+        self.score = score
+        print(self)
+        print(id(self))
+        print(type(self))
 
-first()
+    def say_score(self):
+        print("{}:{}".format(self.name, self.score))
+
+s1 = Student("yd", 18)
+s1.say_score()
+
+#print(Student)
+#print(id(Student))
+#print(type(Student))
+
+print(s1)
+print(id(s1))
+print(type(s1))
+#def first():
+#    a = 20
+#    def second():
+#        nonlocal a
+#        a = 30
+#        def third():
+#            nonlocal a
+#            a = 40
+#        third()
+#    second()
+#    print(a)
+
+#first()
 
 
 
