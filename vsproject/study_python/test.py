@@ -1,24 +1,50 @@
 class Student:
+    company = "gaosheng"
+    count = 0
+
     def __init__(self, name, score):
         self.name = name
         self.score = score
-        print(self)
-        print(id(self))
-        print(type(self))
+        Student.count += 1
+        #print(self)
+        #print(id(self))
+        #print(type(self))
 
     def say_score(self):
         print("{}:{}".format(self.name, self.score))
 
-s1 = Student("yd", 18)
-s1.say_score()
+    @classmethod
+    def print_company(cls):
+        print("company:{}".format(cls.company))
+
+    @staticmethod
+    def add(a, b):
+        print("a + b = {}".format(a + b))
+    
+
+Student.print_company()
+Student.add(2, 3)
+
+
+#s1 = Student("yd", 18)
+#s1.say_score()
+#Student.say_score(s1)
+
+#s2 = Student("yy", 200)
+#s3 = Student("qq", 500)
+#print("count:{}".format(Student.count))
+
+#print(dir(s1))
+#print(s1.__dict__)
+#print(isinstance(s1, Student))
 
 #print(Student)
 #print(id(Student))
 #print(type(Student))
 
-print(s1)
-print(id(s1))
-print(type(s1))
+#print(s1)
+#print(id(s1))
+#print(type(s1))
 #def first():
 #    a = 20
 #    def second():
