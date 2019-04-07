@@ -1,33 +1,239 @@
-class Student:
-    company = "gaosheng"
-    count = 0
+num = 0
 
-    def __init__(self, name, score):
-        self.name = name
-        self.score = score
-        Student.count += 1
-        #print(self)
-        #print(id(self))
-        #print(type(self))
+while True:
+    try:
+        num = int(input("请输入一个整数："))
 
-    def say_score(self):
-        print("{}:{}".format(self.name, self.score))
+        result = 8 / num
 
-    @classmethod
-    def print_company(cls):
-        print("company:{}".format(cls.company))
+        print(result)
 
-    @staticmethod
-    def add(a, b):
-        print("a + b = {}".format(a + b))
+    except ZeroDivisionError:
+        print("除0错误")
+    #except ValueError:
+    #    print("只接受一个数值")
+    except Exception as result:
+        print("未知的错误 ", result)
+
+#except:
+#    print("*" * 20)
+
+#print(num)
+
+#class Singleton:
+#    __obj = None
+#    __init_flag = True
+
+#    def __new__(cls):
+#        if cls.__obj == None:
+#            cls.__obj = object.__new__(cls)
+#        return cls.__obj
+
+#    def __init__(self):
+#        if Singleton.__init_flag:
+#            print("Singleton init")
+#        Singleton.__init_flag = False
+
+#s = Singleton()
+#s1 = Singleton()
+#print(s)
+#print(s1)
+
+
+#import copy
+
+#class A:
+#   def __init__(self, b, c):
+#       self.b = b
+#       self.c = c
+
+#class B:
+#    pass
+
+#class C:
+#    pass
+
+#b = B()
+#c = C()
+#a = A(b, c)
+
+#a1 = a
+#print(a, a.b, a.c)
+#print(a1, a1.b, a1.c)
+
+#a1 = copy.copy(a)
+#print(a, a.b, a.c)
+#print(a1, a1.b, a1.c)
+
+#a1 = copy.deepcopy(a)
+#print(a, a.b, a.c)
+#print(a1, a1.b, a1.c)
+
+#class Man:
+#    def eat(self):
+#        print("man eat")
+
+#class Chinese(Man):
+#    def eat(self):
+#        print("Chinese eat")
+
+#class English(Man):
+#    def eat(self):
+#        print("English eat")
+
+#class Indian(Man):
+#    def eat(self):
+#        print("Indian eat")
+
+#def man_eat(man):
+#    if isinstance(man, Man):
+#        man.eat()
+#    else:
+#        print("is not a man")
+
+#man_eat(Man())
+#man_eat(Chinese())
+#man_eat(English())
+#man_eat(Indian())
+#man_eat(str())
+#class Person:
+#    pass
+
+#class Student(Person):
+#    pass
+
+#print(Student.mro())
+
+
+#class Employee:
+
+#    def __init__(self, name, salary):
+#        self.__name = name
+#        self.__salary = salary
+
+#    @property
+#    def salary(self):
+#        return self.__salary
+
+#    @salary.setter
+#    def salary(self, salary):
+#        if salary < 1000 or salary > 50000:
+#            print("input salary is out of range")
+#        self.__salary = salary
+
+#    def print(self):
+#        print("name:{}, salary:{}".format(self.__name, self.__salary))
+
+#    def __str__(self):
+#        return "name:{} salary:{}".format(self.__name, self.__salary)
+
+#class Engineer(Employee):
+#    def __init__(self, name, salary, skill):
+#        Employee.__init__(self, name, salary)
+#        self.__skill = skill
+
+#    @property
+#    def skill(self):
+#        return self.__skill
+
+#    @property
+#    def salary(self):
+#        return super().salary + 3000
+
+#    def print(self):
+#        Employee.print(self)
+#        print("my skill is {}".format(self.__skill))
+
+#    def __str__(self):
+#        str = super().__str__()
+#        return str + " skill:{}".format(self.__skill)
+
+
+
+#eng1 = Engineer("yangdian", 3000, "coding")
+#print(eng1.__dict__)
+#print(eng1.__class__)
+#print(eng1.__dir__)
+#print(Engineer.__bases__)
+#print(Engineer.mro())
+#print(Engineer.__base__)
+#print(Employee.__subclasses__())
+
+#print(str(eng1))
+#print(eng1.salary)
+
+#eng1.print()
+#print(eng1.skill)
+#print(eng1.salary)
+
+
+#emp1 = Employee("yangdian", 3000)
+#print(emp1.salary)
+#emp1.salary = 30000
+#emp1.salary = 80000
+#print(emp1.salary)
+#emp1.print()
+
+#class Employee:
+#    def __init__(self):
+#        self.name = "yd"
+#        self.__age = 18
+
+#    def __print(self):
+#        print("age:{}".format(self.__age))
+
+
+#e = Employee()
+#print(e.name)
+#print(e._Employee__age)
+#print(e._Employee__print())
+
+
+#class Student:
+#    company = "gaosheng"
+#    count = 0
+
+#    def __init__(self, name, score):
+#        self.name = name
+#        self.score = score
+#        Student.count += 1
+#        #print(self)
+#        #print(id(self))
+#        #print(type(self))
+
+#    def say_score(self):
+#        print("{}:{}".format(self.name, self.score))
+
+#    def __del__(self):
+#        print("delete obj")
+
+#    def __call__(self):
+#        return dict(name = self.name, score = self.score)
+
+#    @classmethod
+#    def print_company(cls):
+#        print("company:{}".format(cls.company))
+
+#    @staticmethod
+#    def add(a, b):
+#        print("a + b = {}".format(a + b))
     
 
-Student.print_company()
-Student.add(2, 3)
+#Student.print_company()
+#Student.add(2, 3)
 
 
 #s1 = Student("yd", 18)
 #s1.say_score()
+#print(s1())
+
+#def print_hello(self):
+#    print("hello")
+
+#Student.__call__ = print_hello
+#print(s1())
+
+#del s1
 #Student.say_score(s1)
 
 #s2 = Student("yy", 200)
