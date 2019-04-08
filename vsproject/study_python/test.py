@@ -1,19 +1,37 @@
-num = 0
+def input_password():
+    pwd = input("请输入密码：")
+    if len(pwd) < 8:
+        raise Exception("密码长度不够")
+    return pwd
 
 while True:
     try:
-        num = int(input("请输入一个整数："))
-
-        result = 8 / num
-
-        print(result)
-
-    except ZeroDivisionError:
-        print("除0错误")
-    #except ValueError:
-    #    print("只接受一个数值")
+        print(input_password())
     except Exception as result:
-        print("未知的错误 ", result)
+        print("unknown error:{}".format(result))
+
+
+#num = 0
+
+#while True:
+#    try:
+#        num = int(input("请输入一个整数："))
+
+#        result = 8 / num
+
+#        print(result)
+
+#    except ZeroDivisionError:
+#        print("除0错误")
+#    except ValueError:
+#        print("只接受一个数值")
+#    except Exception as result:
+#        print("未知的错误 ", result)
+#    else:
+#        print("执行成功")
+#    finally:
+#        print("总会执行")
+#    print("-" * 50)
 
 #except:
 #    print("*" * 20)
