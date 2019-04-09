@@ -4,13 +4,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>test_package\main.py</StartupFile>
+    <StartupFile>aircraft_war\main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>study_python</Name>
     <RootNamespace>study_python</RootNamespace>
+    <InterpreterId>Global|PythonCore|3.6</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,27 +22,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="test_package\" />
-    <Folder Include="test_package\hm_message\" />
-    <Folder Include="test_package\my_mode\" />
+    <InterpreterReference Include="Global|PythonCore|3.6" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="test_package\hm_message\recv_message.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="test_package\hm_message\send_message.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="test_package\hm_message\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="test_package\main.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="test_package\my_mode\__init__.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="test_package\setup.py">
+    <Folder Include="aircraft_war\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aircraft_war\main.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

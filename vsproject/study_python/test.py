@@ -1,14 +1,20 @@
-def input_password():
-    pwd = input("请输入密码：")
-    if len(pwd) < 8:
-        raise Exception("密码长度不够")
-    return pwd
+import pygame
+pygame.examples
 
-while True:
-    try:
-        print(input_password())
-    except Exception as result:
-        print("unknown error:{}".format(result))
+#import os
+#print(os.system('dir'))
+
+#def input_password():
+#    pwd = input("请输入密码：")
+#    if len(pwd) < 8:
+#        raise Exception("密码长度不够")
+#    return pwd
+
+#while True:
+#    try:
+#        print(input_password())
+#    except Exception as result:
+#        print("unknown error:{}".format(result))
 
 
 #num = 0
