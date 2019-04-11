@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>aircraft_war\main.py</StartupFile>
+    <StartupFile>aircraft_war\plane_main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -32,6 +32,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="aircraft_war\plane_sprites.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="aircraft_war\plane_main.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
