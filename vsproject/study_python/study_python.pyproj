@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>aircraft_war\plane_main.py</StartupFile>
+    <StartupFile>udp_tcp\file_download_client.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -26,12 +26,22 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="aircraft_war\" />
+    <Folder Include="udp_tcp\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="aircraft_war\plane_sprites.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="aircraft_war\plane_main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="udp_tcp\file_download_client.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="udp_tcp\file_download_server.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="udp_tcp\udp_test.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
