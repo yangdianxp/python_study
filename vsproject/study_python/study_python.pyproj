@@ -28,9 +28,6 @@
     <Folder Include="aircraft_war\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="aircraft_war\main.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="aircraft_war\plane_sprites.py">
       <SubType>Code</SubType>
     </Compile>
