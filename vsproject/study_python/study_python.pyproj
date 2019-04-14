@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>udp_tcp\file_download_client.py</StartupFile>
+    <StartupFile>multitasking\coroutine_study.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -36,6 +36,37 @@
     <Compile Include="aircraft_war\plane_main.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="multitasking\coroutine_study.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multitasking\process_study.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multitasking\process_study1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multitasking\process_study2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multitasking\process_study3.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multitasking\thread_study.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multitasking\thread_study1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multitasking\thread_study2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multitasking\thread_study3.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multitasking\udp_chatter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test.py" />
     <Compile Include="udp_tcp\file_download_client.py">
       <SubType>Code</SubType>
     </Compile>

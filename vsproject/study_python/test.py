@@ -1,5 +1,16 @@
-import pygame
-pygame.examples
+num = [11, 22]
+
+def func():
+    num.append([100, 200])
+    #num += [100, 200]
+
+print(num)
+func()
+print(num)
+
+
+#import pygame
+#pygame.examples
 
 #import os
 #print(os.system('dir'))
