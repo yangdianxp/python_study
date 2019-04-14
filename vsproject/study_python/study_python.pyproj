@@ -26,6 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="aircraft_war\" />
+    <Folder Include="multitasking\" />
     <Folder Include="udp_tcp\" />
   </ItemGroup>
   <ItemGroup>
