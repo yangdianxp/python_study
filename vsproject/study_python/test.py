@@ -1,12 +1,19 @@
-num = [11, 22]
 
-def func():
-    num.append([100, 200])
-    #num += [100, 200]
+tmp_str = "("
+for i in range(10):
+    tmp_str += "'" + str(i) + "'" + ", "
+tmp_str = tmp_str.rstrip(", ")
+tmp_str += ")"
+print(tmp_str)
+#num = [11, 22]
 
-print(num)
-func()
-print(num)
+#def func():
+#    num.append([100, 200])
+#    #num += [100, 200]
+
+#print(num)
+#func()
+#print(num)
 
 
 #import pygame
