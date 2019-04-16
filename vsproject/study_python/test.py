@@ -1,10 +1,20 @@
+from datetime import timedelta, datetime
 
-tmp_str = "("
-for i in range(10):
-    tmp_str += "'" + str(i) + "'" + ", "
-tmp_str = tmp_str.rstrip(", ")
-tmp_str += ")"
-print(tmp_str)
+
+day = datetime(2018, 1, 2)
+sDay = day.strftime('%Y%m%d')
+print(sDay)
+day = day + timedelta(1)
+sDay = day.strftime('%Y%m%d')
+print(sDay)
+
+
+#tmp_str = "("
+#for i in range(10):
+#    tmp_str += "'" + str(i) + "'" + ", "
+#tmp_str = tmp_str.rstrip(", ")
+#tmp_str += ")"
+#print(tmp_str)
 #num = [11, 22]
 
 #def func():
