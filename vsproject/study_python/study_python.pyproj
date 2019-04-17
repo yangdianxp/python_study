@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>multitasking\coroutine_study2.py</StartupFile>
+    <StartupFile>web_server\module2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -27,6 +27,7 @@
   <ItemGroup>
     <Folder Include="aircraft_war\" />
     <Folder Include="multitasking\" />
+    <Folder Include="web_server\" />
     <Folder Include="udp_tcp\" />
   </ItemGroup>
   <ItemGroup>
@@ -41,6 +42,12 @@
     </Compile>
     <Compile Include="multitasking\coroutine_study1.py" />
     <Compile Include="multitasking\coroutine_study2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multitasking\coroutine_study3.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="multitasking\coroutine_study4.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="multitasking\process_study.py">
@@ -78,6 +85,12 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="udp_tcp\udp_test.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="web_server\module1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="web_server\module2.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
