@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>web_server\module2.py</StartupFile>
+    <StartupFile>web_server\regular_expression3.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -87,10 +87,13 @@
     <Compile Include="udp_tcp\udp_test.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="web_server\module1.py">
+    <Compile Include="web_server\regular_expression1.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="web_server\module2.py">
+    <Compile Include="web_server\regular_expression2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="web_server\regular_expression3.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
