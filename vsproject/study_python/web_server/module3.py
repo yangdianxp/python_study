@@ -1,5 +1,8 @@
 import socket
 import re
+import gevent
+from gevent import monkey
+monkey.patch_all()
 
 def service_client(new_socket):
     request = new_socket.recv(1024).decode("utf-8")
@@ -42,7 +45,7 @@ def main():
     while True:
         new_socket, client_addr = tcp_server_socket.accept()
         print("client_addr:{}".format(client_addr))
-        service_client(new_socket)
+        gevent.spawn(service_client, new_socket)
         
 if __name__ == "__main__":
     main()

@@ -1,5 +1,6 @@
 import socket
 import re
+import multiprocessing
 
 def service_client(new_socket):
     request = new_socket.recv(1024).decode("utf-8")
@@ -42,7 +43,9 @@ def main():
     while True:
         new_socket, client_addr = tcp_server_socket.accept()
         print("client_addr:{}".format(client_addr))
-        service_client(new_socket)
+        p = multiprocessing.Process(target=service_client, args=(new_socket,))
+        p.start()
+        new_socket.close()
         
 if __name__ == "__main__":
     main()
