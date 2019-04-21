@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>web_server\module4.py</StartupFile>
+    <StartupFile>python_advance\context.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -27,6 +27,7 @@
   <ItemGroup>
     <Folder Include="aircraft_war\" />
     <Folder Include="multitasking\" />
+    <Folder Include="python_advance\" />
     <Folder Include="web_server\" />
     <Folder Include="udp_tcp\" />
   </ItemGroup>
@@ -77,6 +78,13 @@
     <Compile Include="multitasking\udp_chatter.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="python_advance\inherit.py" />
+    <Compile Include="python_advance\property.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="python_advance\context.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="test.py" />
     <Compile Include="udp_tcp\file_download_client.py">
       <SubType>Code</SubType>
@@ -85,18 +93,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="udp_tcp\udp_test.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="web_server\module1.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="web_server\module2.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="web_server\module3.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="web_server\module4.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="web_server\regular_expression1.py">
@@ -108,6 +104,10 @@
     <Compile Include="web_server\regular_expression3.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="web_server\web_server.py" />
+    <Compile Include="web_server\web_server2.py" />
+    <Compile Include="web_server\web_server3.py" />
+    <Compile Include="web_server\web_server4.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
