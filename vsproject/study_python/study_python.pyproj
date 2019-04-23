@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>test.py</StartupFile>
+    <StartupFile>mini_web\web_server.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -27,6 +27,7 @@
   <ItemGroup>
     <Folder Include="aircraft_war\" />
     <Folder Include="multitasking\" />
+    <Folder Include="mini_web\" />
     <Folder Include="python_advance\" />
     <Folder Include="web_server\" />
     <Folder Include="udp_tcp\" />
@@ -36,6 +37,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="aircraft_war\plane_main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mini_web\web_server.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="multitasking\coroutine_study.py">
