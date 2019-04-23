@@ -1,12 +1,15 @@
 from datetime import timedelta, datetime
 
+test_list = [[1, 2], [3, 4], [5, 6]]
+for i, j in test_list:
+    print(i, j)
 
-day = datetime(2018, 1, 2)
-sDay = day.strftime('%Y%m%d')
-print(sDay)
-day = day + timedelta(1)
-sDay = day.strftime('%Y%m%d')
-print(sDay)
+#day = datetime(2018, 1, 2)
+#sDay = day.strftime('%Y%m%d')
+#print(sDay)
+#day = day + timedelta(1)
+#sDay = day.strftime('%Y%m%d')
+#print(sDay)
 
 
 #tmp_str = "("
