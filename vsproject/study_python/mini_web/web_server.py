@@ -2,7 +2,7 @@ import socket
 import re
 import multiprocessing
 import time
-import mini_frame
+import dynamic.mini_frame
 
 class WSGIServer(object):
     def __init__(self):
@@ -45,13 +45,21 @@ class WSGIServer(object):
                 new_socket.send(response.encode("utf-8"))
                 new_socket.send(html_content)
         else:
-            header = "HTTP/1.1 200 OK\r\n"
+            env = dict()
+            body = dynamic.mini_frame.application(env, self.set_response_header)
+
+            header = "HTTP/1.1 {}\r\n".format(self.status)
+            for temp in self.headers:
+                header += "{}:{}\r\n".format(temp[0], temp[1])
             header += "\r\n"
-            body = mini_frame.login()
             response = header + body
             new_socket.send(response.encode("utf-8"))
     
         new_socket.close()
+
+    def set_response_header(self, status, headers):
+        self.status = status
+        self.headers = headers
 
     def run_forever(self):
         while True:

@@ -26,6 +26,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="aircraft_war\" />
+    <Folder Include="mini_web\dynamic\" />
+    <Folder Include="mini_web\templates\" />
+    <Folder Include="mini_web\static\" />
     <Folder Include="multitasking\" />
     <Folder Include="mini_web\" />
     <Folder Include="python_advance\" />
@@ -39,7 +42,10 @@
     <Compile Include="aircraft_war\plane_main.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="mini_web\mini_frame.py">
+    <Compile Include="mini_web\dynamic\mini_frame.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mini_web\dynamic\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="mini_web\web_server.py">
