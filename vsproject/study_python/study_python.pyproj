@@ -39,6 +39,9 @@
     <Compile Include="aircraft_war\plane_main.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="mini_web\mini_frame.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="mini_web\web_server.py">
       <SubType>Code</SubType>
     </Compile>
