@@ -1,15 +1,16 @@
+import sys
 import socket
 import re
 import multiprocessing
 import time
-import dynamic.mini_frame
+#import dynamic.mini_frame
 
 class WSGIServer(object):
-    def __init__(self):
+    def __init__(self, port):
         self.tcp_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.tcp_server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-        self.tcp_server_socket.bind(("", 7890))
+        self.tcp_server_socket.bind(("", port))
         self.tcp_server_socket.listen(128)
 
     def service_client(self, new_socket):
@@ -73,8 +74,23 @@ class WSGIServer(object):
         self.tcp_server_socket.close()
 
 def main():
-    wsgi_server = WSGIServer()
+    if len(sys.argv) == 3:
+        port = int(sys.argv[1])
+        frame_app_name = sys.argv[2]
+    else:
+        print("请按照以下方式运行:")
+        print("python3 xxxx.py 7890 mini_frame:application")
+        return
+
+    wsgi_server = WSGIServer(port)
     wsgi_server.run_forever()
         
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except:
+        ex_type, ex_val, ex_stack = sys.exc_info()
+        print(ex_type)
+        print(ex_val)
+        for stack in traceback.extract_tb(ex_stack):
+            print(stack)
