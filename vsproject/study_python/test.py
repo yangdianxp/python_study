@@ -1,8 +1,17 @@
 from datetime import timedelta, datetime
+import sys
 
 test_list = [[1, 2], [3, 4], [5, 6]]
 for i, j in test_list:
     print(i, j)
+
+try:
+    a = test_list[4]
+    print(a)
+except Exception as result:
+    info = sys.exc_info()[2].tb_frame.f_back
+    temp = "filename:{}\nlines:{}\terror:{}"
+    print(temp.format(info.f_code.co_filename, info.f_lineno, result))
 
 #day = datetime(2018, 1, 2)
 #sDay = day.strftime('%Y%m%d')
