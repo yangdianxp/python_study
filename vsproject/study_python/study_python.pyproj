@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>test.py</StartupFile>
+    <StartupFile>mini_web\web_server.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -121,6 +121,10 @@
     <Compile Include="web_server\web_server2.py" />
     <Compile Include="web_server\web_server3.py" />
     <Compile Include="web_server\web_server4.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mini_web\templates\center.html" />
+    <Content Include="mini_web\templates\index.html" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

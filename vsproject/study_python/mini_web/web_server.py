@@ -30,7 +30,7 @@ class WSGIServer(object):
 
         if not file_name.endswith(".py"):
             try:
-                f = open("web_server/html" + file_name, "rb")
+                f = open("./mini_web/static" + file_name, "rb")
             except Exception as result:
                 print(result)
                 response = "HTTP/1.1 404 NOT FOUND\r\n"
@@ -46,6 +46,7 @@ class WSGIServer(object):
                 new_socket.send(html_content)
         else:
             env = dict()
+            env['PATH_INFO'] = file_name 
             body = dynamic.mini_frame.application(env, self.set_response_header)
 
             header = "HTTP/1.1 {}\r\n".format(self.status)
@@ -59,7 +60,8 @@ class WSGIServer(object):
 
     def set_response_header(self, status, headers):
         self.status = status
-        self.headers = headers
+        self.headers = [("server", "mini_web v8.8")]
+        self.headers += headers
 
     def run_forever(self):
         while True:
