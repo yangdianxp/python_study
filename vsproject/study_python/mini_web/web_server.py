@@ -6,12 +6,15 @@ import time
 #import dynamic.mini_frame
 
 class WSGIServer(object):
-    def __init__(self, port):
+    def __init__(self, port, app, static_path):
         self.tcp_server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.tcp_server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
         self.tcp_server_socket.bind(("", port))
         self.tcp_server_socket.listen(128)
+
+        self.application = app
+        self.static_path = static_path
 
     def service_client(self, new_socket):
         request = new_socket.recv(1024).decode("utf-8")
@@ -31,7 +34,7 @@ class WSGIServer(object):
 
         if not file_name.endswith(".py"):
             try:
-                f = open("./mini_web/static" + file_name, "rb")
+                f = open(self.static_path + file_name, "rb")
             except Exception as result:
                 print(result)
                 response = "HTTP/1.1 404 NOT FOUND\r\n"
@@ -48,7 +51,7 @@ class WSGIServer(object):
         else:
             env = dict()
             env['PATH_INFO'] = file_name 
-            body = dynamic.mini_frame.application(env, self.set_response_header)
+            body = self.application(env, self.set_response_header)
 
             header = "HTTP/1.1 {}\r\n".format(self.status)
             for temp in self.headers:
@@ -82,7 +85,24 @@ def main():
         print("python3 xxxx.py 7890 mini_frame:application")
         return
 
-    wsgi_server = WSGIServer(port)
+    ret = re.match(r"([^:]+):(.*)", frame_app_name)
+    if ret:
+        frame_name = ret.group(1)
+        app_name = ret.group(2)
+    else:
+        print("请按照以下方式运行:")
+        print("python3 xxxx.py 7890 mini_frame:application")
+        return
+
+    with open("./mini_web/web_server.conf") as f:
+        conf_info = eval(f.read())
+    # 此时conf_info是一个字典
+
+    sys.path.append(conf_info["dynamic_path"])
+    frame = __import__(frame_name)  # 返回值标记着导入的这个模块
+    app = getattr(frame, app_name)
+
+    wsgi_server = WSGIServer(port, app, conf_info["static_path"])
     wsgi_server.run_forever()
         
 if __name__ == "__main__":
