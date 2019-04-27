@@ -1,17 +1,103 @@
-from datetime import timedelta, datetime
-import sys
+#给装饰器传参数
+def set_level(level_num):
+    print("level_num:", level_num)
+    def set_func(func):
+        def call_func(*args, **kwargs):
+            if level_num == 1:
+                print("11111111111111")
+            elif level_num == 2:
+                print("22222222222222")
+            return func(*args, **kwargs)
+        return call_func
+    return set_func
 
-test_list = [[1, 2], [3, 4], [5, 6]]
-for i, j in test_list:
-    print(i, j)
+@set_level(1)
+def test1():
+    print("-------test1---------")
 
-try:
-    a = test_list[4]
-    print(a)
-except Exception as result:
-    info = sys.exc_info()[2].tb_frame.f_back
-    temp = "filename:{}\nlines:{}\terror:{}"
-    print(temp.format(info.f_code.co_filename, info.f_lineno, result))
+@set_level(2)
+def test2():
+    print("-------test2---------")
+
+#test1()
+#test2()
+
+
+##任意思参数的装饰器
+#def set_func(func):
+#    print("---开始进行装饰")
+#    def call_func(*args, **kwargs):
+#        print("11111111111")
+#        print("22222222222")
+#        func(*args, **kwargs)
+#    return call_func
+
+#@set_func
+#def test1(num, *args, **kwargs):
+#    print("-------test1---------{}".format(num))
+#    print("-------test2---------{}", args)
+#    print("-------test2---------{}", kwargs)
+
+#test1(100)
+#test1(100, 200)
+#test1(100, 200, 300, mm = 100)
+
+##装饰器演示
+#def set_func(func):
+#    def call_func():
+#        print("11111111111")
+#        print("22222222222")
+#        func()
+#    return call_func
+
+#@set_func
+#def test1():
+#    print("-------test1----------")
+
+#test1()
+
+#foo = lambda x: x + 1
+#print((lambda x: x + 1)(2))
+
+#x = 300
+#def test1():
+#    x = 200
+#    def test2():
+#        nonlocal x
+#        print("===>", x)
+#        x = 100
+#        print("===>", x)
+#    return test2
+
+#test2_obj = test1()
+#test2_obj()
+
+
+#闭包
+#def line(k, b):
+#    def create_y(x):
+#        print(k * x + b)
+#    return create_y
+
+#line_obj = line(1, 2)
+#line_obj(0)
+#line_obj(1)
+#line_obj(2)
+
+#from datetime import timedelta, datetime
+#import sys
+
+#test_list = [[1, 2], [3, 4], [5, 6]]
+#for i, j in test_list:
+#    print(i, j)
+
+#try:
+#    a = test_list[4]
+#    print(a)
+#except Exception as result:
+#    info = sys.exc_info()[2].tb_frame.f_back
+#    temp = "filename:{}\nlines:{}\terror:{}"
+#    print(temp.format(info.f_code.co_filename, info.f_lineno, result))
 
 #day = datetime(2018, 1, 2)
 #sDay = day.strftime('%Y%m%d')
