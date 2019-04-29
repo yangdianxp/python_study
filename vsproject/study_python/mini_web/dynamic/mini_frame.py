@@ -10,7 +10,7 @@ def route(file_name):
         return call_func
     return set_func
 
-@route("/index.py")
+@route("/index.html")
 def index():
     with open("./mini_web/templates/index.html", encoding='utf-8') as f:
         content = f.read()
@@ -18,7 +18,7 @@ def index():
     content = re.sub(r"\{%content%\}", my_stock_info, content)
     return content
 
-@route("/center.py")
+@route("/center.html")
 def center():
     with open("./mini_web/templates/center.html", encoding='utf-8') as f:
         content = f.read()

@@ -32,7 +32,7 @@ class WSGIServer(object):
                 file_name = "/index.html"
         print("file_name:{}".format(file_name))
 
-        if not file_name.endswith(".py"):
+        if not file_name.endswith(".html"):
             try:
                 f = open(self.static_path + file_name, "rb")
             except Exception as result:
