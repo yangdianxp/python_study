@@ -1,5 +1,6 @@
 import re
 from pymysql import connect
+import urllib.parse
 
 URL_FUNC_DICT = {}
 
@@ -127,6 +128,39 @@ def del_focus(ret):
     cs.close()
     conn.close()
     return "取消关注成功..."
+
+@route(r"/update/(\d+)\.html")
+def show_update_page(ret):
+    stock_code = ret.group(1)
+    with open("./mini_web/templates/update.html", encoding='utf-8') as f:
+        content = f.read()
+    conn = connect(host = 'localhost', port = 3306, user = 'root', database = 'stock_db', password = '123456', charset = 'utf8')
+    cs = conn.cursor()
+    sql = """select f.note_info from (focus as f inner join info as i on f.info_id = i.id) where i.code = %s"""
+    cs.execute(sql, (stock_code, ))
+    stock_infos = cs.fetchone()
+    note_info = stock_infos[0]
+    cs.close()
+    conn.close()
+
+    content = re.sub(r"\{%code%\}", stock_code, content)
+    content = re.sub(r"\{%note_info%\}", note_info, content)
+    return content 
+
+@route(r"/update/(\d+)/(.*)\.html")
+def save_update_page(ret):
+    stock_code = ret.group(1)
+    comment = ret.group(2)
+    comment = urllib.parse.unquote(comment)
+    conn = connect(host = 'localhost', port = 3306, user = 'root', database = 'stock_db', password = '123456', charset = 'utf8')
+    cs = conn.cursor()
+    sql = """update focus set note_info = %s where info_id = (select id from info where code = %s);"""
+    cs.execute(sql, (comment, stock_code))
+    conn.commit()
+    cs.close()
+    conn.close()
+
+    return "修改成功..."
 
 def application(env, start_response):
     start_response('200 OK', [('Content-Type', 'text/html;charset=utf-8')])
