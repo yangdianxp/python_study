@@ -1,6 +1,7 @@
 import re
 from pymysql import connect
 import urllib.parse
+import logging
 
 URL_FUNC_DICT = {}
 

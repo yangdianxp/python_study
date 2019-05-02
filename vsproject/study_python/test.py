@@ -1,23 +1,154 @@
+test_dict = {"a":1, "b":2}
+#print(test_dict)
+#for name, value in test_dict.items():
+#    print(name, value)
+
+#for name in test_dict.keys():
+#    print(name)
+
+#for value in test_dict.values():
+#    print(value)
+
+keys = [str(i) for i in test_dict.keys()]
+values = [str(i) for i in test_dict.values()]
+sql = """insert into my_table ({}) values ({})""".format(','.join(keys), ','.join(values))
+print(sql)
+
+#class ModelMetaclass(type):
+#    def __new__(cls, name, bases, attrs):
+#        mappings = dict()
+#        for k, v in attrs.items():
+#            if isinstance(v, tuple):
+#                print('Found mapping:{} ====> {}'.format(k, v))
+#                mappings[k] = v
+
+#        for k in mappings.keys():
+#            attrs.pop(k)
+
+#        attrs['__mappings__'] = mappings
+#        print(mappings)
+#        attrs['__table__'] = name
+#        print(name)
+#        return type.__new__(cls, name, bases, attrs)
+
+#class User(metaclass=ModelMetaclass):
+#    uid = ('uid', 'int unsigned')
+#    name = ('username', "varchar(30)")
+#    email = ('email', "varchar(30)")
+#    password = ('password', "varchar(30)")
+
+#    def __init__(self, **kwargs):
+#        for name, value in kwargs.items():
+#            setattr(self, name, value)
+
+#    def save(self):
+#        fields = []
+#        args = []
+#        for k, v in self.__mappings__.items():
+#            fields.append(v[0])
+#            args.append(getattr(self, k, None))
+
+#            sql = 'insert into %s (%s) values(%s)' % (self.__table__, ','.join(fields), ','.join([str(i) for i in args]))
+#            print('SQL: %s' % sql)
+
+#u = User(uid=12345, name='Michael', email='test@orm.org', password='my-pwd')
+#u.save()
+
+#test_dict = {"a":1, "b":2}
+#print(test_dict)
+#for name, value in test_dict.items():
+#    print(name, value)
+
+#元类
+##Test = type("Test", (), {"num":100, "num2":200})
+##print(help(Test))
+##Test1 = type("Test1", (Test, ), {"aaa":500})
+##print(help(Test1))
+
+##实例方法
+#def test(self):
+#    print("实例方法...")
+
+##Test3 = type("Test3", (), {"test":test})
+##t = Test3()
+##t.test()
+
+##类方法
+#@classmethod
+#def test_3(cls):
+#    print("----这是类方法----")
+
+##Test4 = type("Test4", (), {"test":test, "test_3":test_3})
+##print(help(Test4))
+
+##静态方法
+#@staticmethod
+#def test_4():
+#    print("----这是静态方法----")
+
+#Test5 = type("Test5", (), {"test":test, "test_3":test_3, "test_4":test_4})
+#print(help(Test5))
+
+
+
+#日志
+#import logging
+#logger = logging.getLogger()
+#logger.setLevel(logging.INFO) # Log等级总开关
+
+#logfile = './log.txt'
+#fh = logging.FileHandler(logfile, mode='a')
+#fh.setLevel(logging.DEBUG)
+
+#ch = logging.StreamHandler()
+#ch.setLevel(logging.WARNING)
+
+#formatter = logging.Formatter('%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s')
+#fh.setFormatter(formatter)
+#ch.setFormatter(formatter)
+
+#logger.addHandler(fh)
+#logger.addHandler(ch)
+
+#logging.info('这是 logging info message')
+#logging.debug('这是 logging debug message')
+#logging.warning('这是 logging warning message')
+#logging.error('这是 logging error message')
+#logging.critical('这是 logging critical message')
+
+
+#logging.basicConfig(level=logging.DEBUG,
+#                    filename='./log.txt',
+#                    filemode='w',
+#                    format='%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s')
+
+#logging.info('这是 logging info message')
+#logging.debug('这是 logging debug message')
+#logging.warning('这是 logging warning message')
+#logging.error('这是 logging error message')
+#logging.critical('这是 logging critical message')
+
+
 #给装饰器传参数
-def set_level(level_num):
-    print("level_num:", level_num)
-    def set_func(func):
-        def call_func(*args, **kwargs):
-            if level_num == 1:
-                print("11111111111111")
-            elif level_num == 2:
-                print("22222222222222")
-            return func(*args, **kwargs)
-        return call_func
-    return set_func
+#def set_level(level_num):
+#    print("level_num:", level_num)
+#    def set_func(func):
+#        def call_func(*args, **kwargs):
+#            if level_num == 1:
+#                print("11111111111111")
+#            elif level_num == 2:
+#                print("22222222222222")
+#            return func(*args, **kwargs)
+#        return call_func
+#    return set_func
 
-@set_level(1)
-def test1():
-    print("-------test1---------")
+#@set_level(1)
+#def test1():
+#    print("-------test1---------")
 
-@set_level(2)
-def test2():
-    print("-------test2---------")
+#@set_level(2)
+#def test2():
+#    print("-------test2---------")
 
 #test1()
 #test2()
