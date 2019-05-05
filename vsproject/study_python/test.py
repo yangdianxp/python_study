@@ -1,18 +1,23 @@
-test_dict = {"a":1, "b":2}
-#print(test_dict)
-#for name, value in test_dict.items():
-#    print(name, value)
+def application(env, start_response):
+    start_response('200 OK', [('Content-Type','text/html')])
+    return "Hello World"
 
-#for name in test_dict.keys():
-#    print(name)
 
-#for value in test_dict.values():
-#    print(value)
+#test_dict = {"a":1, "b":2}
+##print(test_dict)
+##for name, value in test_dict.items():
+##    print(name, value)
 
-keys = [str(i) for i in test_dict.keys()]
-values = [str(i) for i in test_dict.values()]
-sql = """insert into my_table ({}) values ({})""".format(','.join(keys), ','.join(values))
-print(sql)
+##for name in test_dict.keys():
+##    print(name)
+
+##for value in test_dict.values():
+##    print(value)
+
+#keys = [str(i) for i in test_dict.keys()]
+#values = [str(i) for i in test_dict.values()]
+#sql = """insert into my_table ({}) values ({})""".format(','.join(keys), ','.join(values))
+#print(sql)
 
 #class ModelMetaclass(type):
 #    def __new__(cls, name, bases, attrs):
