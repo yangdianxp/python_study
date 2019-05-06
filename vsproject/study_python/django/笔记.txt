@@ -1,0 +1,8 @@
+ORM框架
+Object:对象-类
+Relations关系，关系数据库中的表
+Mapping：映射
+
+python3 manage.py makemigrations //生成数据库迁移文件
+python3 manage.py migrate //生成数据库表
+python3 manage.py shell
