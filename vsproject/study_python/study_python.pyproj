@@ -32,6 +32,8 @@
     <Folder Include="django\" />
     <Folder Include="django\first_pro\" />
     <Folder Include="django\first_pro\first_pro\" />
+    <Folder Include="django\first_pro\templates\" />
+    <Folder Include="django\first_pro\templates\test1\" />
     <Folder Include="django\first_pro\test1\" />
     <Folder Include="django\first_pro\test1\migrations\" />
     <Folder Include="django\first_pro\test1\migrations\__pycache__\" />
@@ -149,6 +151,7 @@
     <Compile Include="web_server\web_server4.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="django\first_pro\templates\test1\index.html" />
     <Content Include="django\first_pro\test1\migrations\__pycache__\__init__.cpython-36.pyc" />
     <Content Include="django\笔记.txt">
       <SubType>Code</SubType>
