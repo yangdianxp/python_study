@@ -1,6 +1,13 @@
-def application(env, start_response):
-    start_response('200 OK', [('Content-Type','text/html')])
-    return "Hello World"
+import requests
+
+url = "https://free.currconv.com/api/v7/convert?q=USD_PHP&compact=ultra&apiKey=dc20570ebb92caad486c"
+r = requests.get(url, timeout=10)
+print(r)
+
+
+#def application(env, start_response):
+#    start_response('200 OK', [('Content-Type','text/html')])
+#    return "Hello World"
 
 
 #test_dict = {"a":1, "b":2}
