@@ -22,3 +22,9 @@ def index2(request):
 def show_books(request):
     books = BookInfo.objects.all()
     return render(request, 'test1/show_books.html', {'books':books})
+
+def detail(request, bid):
+    book = BookInfo.objects.get(id=bid)
+    heros = book.heroinfo_set.all()
+    return render(request, "test1/detail.html", 
+                  {'book':book, 'heros':heros})

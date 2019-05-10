@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -8,7 +8,7 @@
 	图书信息如下：
 	<ul>
 		{% for book in books %}
-		<li> {{ book.btitle }} </li>
+		<li><a href="/books/{{book.id}}">{{ book.btitle }}</a></li>
     	{% endfor %}
 	</ul>
 	
