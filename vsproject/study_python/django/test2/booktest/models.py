@@ -1,5 +1,18 @@
 from django.db import models
 
+class BookInfoManager(models.Manager):
+    def all(self):
+        books = super().all()
+        books = books.filter(isDelete=False)
+        return books
+
+    def create_book(self, btitle, bpub_date):
+        book = BookInfo()
+        book.btitle = btitle
+        book.bpub_date = bpub_date
+        book.save()
+        return book
+
 # Create your models here.
 class BookInfo(models.Model):
     #btitle = models.CharField(max_length=20)
@@ -13,6 +26,15 @@ class BookInfo(models.Model):
     isDelete = models.BooleanField(default=False)
 
     # book = models.Manager() # 自定义一个Manager类对象
+    objects = BookInfoManager() # 
+
+    #@classmethod
+    #def create_book(cls, btitle, bpub_date):
+    #    obj = cls()
+    #    obj.btitle = btitle
+    #    obj.bpub_date = bpub_date
+    #    obj.save()
+    #    return obj
 
 class HeroInfo(models.Model):
     hname = models.CharField(max_length=20)
