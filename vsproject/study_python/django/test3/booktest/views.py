@@ -4,6 +4,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 
 # Create your views here.
+# request就是HttpRequest类型的对象
+# request包含浏览器请求的信息
 def index(request):
     return render(request, 'booktest/index.html', {})
 
