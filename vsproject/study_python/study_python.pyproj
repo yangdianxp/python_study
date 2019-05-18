@@ -44,6 +44,13 @@
     <Folder Include="django\test2\templates\booktest\" />
     <Folder Include="django\test2\test2\" />
     <Folder Include="django\test2\test2\__pycache__\" />
+    <Folder Include="django\test3\" />
+    <Folder Include="django\test3\booktest\" />
+    <Folder Include="django\test3\booktest\migrations\" />
+    <Folder Include="django\test3\templates\" />
+    <Folder Include="django\test3\templates\booktest\" />
+    <Folder Include="django\test3\test3\" />
+    <Folder Include="django\test3\test3\__pycache__\" />
     <Folder Include="mini_web\dynamic\" />
     <Folder Include="mini_web\templates\" />
     <Folder Include="mini_web\static\" />
@@ -92,6 +99,19 @@
     <Compile Include="django\test2\test2\urls.py" />
     <Compile Include="django\test2\test2\wsgi.py" />
     <Compile Include="django\test2\test2\__init__.py" />
+    <Compile Include="django\test3\booktest\admin.py" />
+    <Compile Include="django\test3\booktest\apps.py" />
+    <Compile Include="django\test3\booktest\migrations\__init__.py" />
+    <Compile Include="django\test3\booktest\models.py" />
+    <Compile Include="django\test3\booktest\tests.py" />
+    <Compile Include="django\test3\booktest\urls.py" />
+    <Compile Include="django\test3\booktest\views.py" />
+    <Compile Include="django\test3\booktest\__init__.py" />
+    <Compile Include="django\test3\manage.py" />
+    <Compile Include="django\test3\test3\settings.py" />
+    <Compile Include="django\test3\test3\urls.py" />
+    <Compile Include="django\test3\test3\wsgi.py" />
+    <Compile Include="django\test3\test3\__init__.py" />
     <Compile Include="mini_web\dynamic\mini_frame.py">
       <SubType>Code</SubType>
     </Compile>
@@ -179,6 +199,8 @@
     <Content Include="django\first_pro\test1\migrations\__pycache__\__init__.cpython-36.pyc" />
     <Content Include="django\test2\test2\__pycache__\settings.cpython-36.pyc" />
     <Content Include="django\test2\test2\__pycache__\__init__.cpython-36.pyc" />
+    <Content Include="django\test3\test3\__pycache__\settings.cpython-36.pyc" />
+    <Content Include="django\test3\test3\__pycache__\__init__.cpython-36.pyc" />
     <Content Include="django\笔记.txt">
       <SubType>Code</SubType>
     </Content>

@@ -36,6 +36,9 @@ class BookInfo(models.Model):
     #    obj.save()
     #    return obj
 
+    class Meta:
+        db_table = 'bookinfo' #指定模型类对应的表名
+
 class HeroInfo(models.Model):
     hname = models.CharField(max_length=20)
     hgender = models.BooleanField(default=False)
@@ -79,3 +82,6 @@ class AreaInfo(models.Model):
     atitle = models.CharField(max_length=20)
     # 关系属性，代表当前地区的父级地区
     aParent = models.ForeignKey('self', null=True, blank=True, on_delete=models.CASCADE)
+
+    #class Meta:
+    #    db_table = 'areas'
