@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tools\compression.py</StartupFile>
+    <StartupFile>tools\decompression.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -171,6 +171,9 @@
     </Compile>
     <Compile Include="test.py" />
     <Compile Include="tools\compression.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tools\decompression.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="udp_tcp\file_download_client.py">
