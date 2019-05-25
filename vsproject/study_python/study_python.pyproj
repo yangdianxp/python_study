@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>test.py</StartupFile>
+    <StartupFile>tools\compression.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -56,6 +56,7 @@
     <Folder Include="mini_web\static\" />
     <Folder Include="multitasking\" />
     <Folder Include="mini_web\" />
+    <Folder Include="tools\" />
     <Folder Include="python_advance\" />
     <Folder Include="web_server\" />
     <Folder Include="udp_tcp\" />
@@ -169,6 +170,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="test.py" />
+    <Compile Include="tools\compression.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="udp_tcp\file_download_client.py">
       <SubType>Code</SubType>
     </Compile>
