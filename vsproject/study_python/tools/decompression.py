@@ -5,7 +5,7 @@ import zipfile
 
 def main():
     #查找文件名
-    os.chdir(r"C:\Users\Administrator\Desktop\temp")
+    os.chdir(r"C:\Users\Administrator\Desktop\za20190525")
     for root, dirs, files in os.walk("."):
         for f in files:             
             unzip = zipfile.ZipFile(f)
