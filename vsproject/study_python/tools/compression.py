@@ -8,15 +8,16 @@ count = 0
 
 def main():
     #查找文件名
-    os.chdir(r"C:\Users\Administrator\Desktop\xshell6")
+    os.chdir(r"F:\视频\za20190525")
     for root, dirs, files in os.walk("."):
         for f in files:
-            global count
-            zip_name = zip_file_base_name + str(count) + ".zip"
+            global count       
+            zip_name = "{}{:0>3d}{}".format(zip_file_base_name, count, ".zip")
             count += 1
             zip = zipfile.ZipFile( zip_name, 'w', zipfile.ZIP_DEFLATED )
             zip.write(f)
             zip.close()
+            os.remove(f)
             print('compressing {} finished'.format(zip_name))
 
 if __name__ == '__main__':
