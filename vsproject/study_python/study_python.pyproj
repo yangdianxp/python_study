@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>tools\decompression.py</StartupFile>
+    <StartupFile>flask\pro1\hello.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -51,11 +51,15 @@
     <Folder Include="django\test3\templates\booktest\" />
     <Folder Include="django\test3\test3\" />
     <Folder Include="django\test3\test3\__pycache__\" />
+    <Folder Include="flask\pro1\" />
+    <Folder Include="flask\pro1\templates\" />
+    <Folder Include="flask\pro1\static\" />
     <Folder Include="mini_web\dynamic\" />
     <Folder Include="mini_web\templates\" />
     <Folder Include="mini_web\static\" />
     <Folder Include="multitasking\" />
     <Folder Include="mini_web\" />
+    <Folder Include="flask\" />
     <Folder Include="tools\" />
     <Folder Include="python_advance\" />
     <Folder Include="web_server\" />
@@ -113,6 +117,9 @@
     <Compile Include="django\test3\test3\urls.py" />
     <Compile Include="django\test3\test3\wsgi.py" />
     <Compile Include="django\test3\test3\__init__.py" />
+    <Compile Include="flask\pro1\hello.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="mini_web\dynamic\mini_frame.py">
       <SubType>Code</SubType>
     </Compile>
@@ -211,6 +218,10 @@
     <Content Include="django\笔记.txt">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="flask\pro1\config.cfg">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="flask\pro1\static\index.html" />
     <Content Include="mini_web\templates\center.html" />
     <Content Include="mini_web\templates\index.html" />
     <Content Include="mini_web\web_server.conf">
