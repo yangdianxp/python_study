@@ -45,6 +45,12 @@ class RegexConverter(BaseConverter):
         super().__init__(url_map)
         self.regex = regex
 
+    def to_python(self, value):
+        pass
+
+    def to_url(self, value):
+        pass
+
 # 将自定义的转换器添加到flask的应用中
 app.url_map.converters["re"] = RegexConverter
 
