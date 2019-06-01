@@ -1,4 +1,4 @@
-from flask import Flask, current_app, redirect, url_for
+from flask import Flask, current_app, redirect, url_for, request
 from werkzeug.routing import BaseConverter
 
 # 创建flask的应用对象
@@ -17,11 +17,17 @@ app.config.from_object(Config)
 
 # app.config["DEBUG"] = True
 
-
-@app.route("/")
+# ?后的是查询字符串 QueryString
+@app.route("/index", methods=["GET", "POST"])
 def index():
     print(current_app.config.get("ITCAST"))
-    return "hello flask"
+    name = request.form.get("name")
+    age = request.form.get("age")
+    print(request.data)
+    print(request.args)
+    #name = request.data.get("name")
+    #age = request.data.get("age")
+    return "hello name = {}, age = {}".format(name, age)
 
 @app.route("/post_only", methods=["GET", "POST"])
 def post_only():
