@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>flask\pro1\hello.py</StartupFile>
+    <StartupFile>urllib_study.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -167,6 +167,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="multitasking\udp_chatter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="urllib_study.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="python_advance\inherit.py" />
