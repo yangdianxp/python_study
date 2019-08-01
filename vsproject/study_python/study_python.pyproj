@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>urllib_study.py</StartupFile>
+    <StartupFile>reptile\03_fan_yi.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -60,6 +60,7 @@
     <Folder Include="multitasking\" />
     <Folder Include="mini_web\" />
     <Folder Include="flask\" />
+    <Folder Include="reptile\" />
     <Folder Include="tools\" />
     <Folder Include="python_advance\" />
     <Folder Include="web_server\" />
@@ -167,6 +168,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="multitasking\udp_chatter.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="reptile\02_tieba_spider.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="reptile\03_fan_yi.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="reptile\test.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="urllib_study.py">
