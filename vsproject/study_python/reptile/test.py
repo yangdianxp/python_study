@@ -1,5 +1,8 @@
 from splinter import Browser
 
+
+
+'''
 # "C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chrome.exe"
 # executable_path = {'executable_path':r"""C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chrome.exe"""}
 browser = Browser("chrome")
@@ -13,6 +16,7 @@ else:
     print("No, it wasn't found... We need to improve our SEO techniques")
 
 browser.quit()
+'''
 
 
 
