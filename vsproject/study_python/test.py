@@ -1,8 +1,43 @@
 import requests
 
-url = "https://free.currconv.com/api/v7/convert?q=USD_PHP&compact=ultra&apiKey=dc20570ebb92caad486c"
-r = requests.get(url, timeout=10)
-print(r)
+
+
+a = "{:^6d} {:^6d} {:^6d}".format(123, 456, 789)
+print(a)
+
+#print("Sammy ate {0:f} percent of a {1}!".format(75, "pizza"))
+
+#name = "Eric"
+#age = 74
+#str = F"Hello, {name}. You are {age}."
+#print(str)
+
+#def change_value(a):
+#    a = 10
+
+#def change_list(l):
+#    l.append(10)
+
+#def change_dict(d):
+#    d[10] = 10
+
+
+#a = 1
+#change_value(a)
+#print(a)
+
+#test_list = []
+#change_list(test_list)
+#print(test_list)
+
+#test_dict = {}
+#change_dict(test_dict)
+#print(test_dict)
+
+
+#url = "https://free.currconv.com/api/v7/convert?q=USD_PHP&compact=ultra&apiKey=dc20570ebb92caad486c"
+#r = requests.get(url, timeout=10)
+#print(r)
 
 
 #def application(env, start_response):
