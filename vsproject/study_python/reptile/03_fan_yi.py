@@ -2,22 +2,21 @@ import traceback
 import sys
 import requests
 
-headers = {
-    "User-Agent":"Mozilla/5.0 (Linux; Android 5.1.1; Nexus 6 Build/LYZ28E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Mobile Safari/537.36",
-        }
-
 data = {
-    "from": "zh",
-    "to": "en",
-    "query": "你好世界",
+    "address": "2khEheVH5hqCLEjvMFrvhiovQUHw",
+    "coin": "lkl",
 }
 
-post_url = "http://fanyi.baidu.com/basetrans"
-
+post_url = "https://api.coints.io/api/data/is_addr"
+#url = """https://www.baidu.com"""
+get_url = "https://api.coints.io/api/data/is_addr?address=3h1pxo67SAAY7U5S2UULgFatSPhH"
 
 def main(argv):
-    r = requests.post(post_url, data=data, headers=headers)
+    # r = requests.post(post_url, data=data)
+    r = requests.get(get_url)
+    print(r.status_code)
     print(r.content.decode())
+    print(r.text)
     
 if __name__ == "__main__":
     try:

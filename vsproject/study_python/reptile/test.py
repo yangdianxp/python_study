@@ -1,4 +1,12 @@
-from splinter import Browser
+import requests
+import json
+
+url = """https://www.baidu.com"""
+# url = """https://api.coints.io/api/data/is_addr?address=2khEheVH5hqCLEjvMFrvhiovQUHw"""
+r = requests.post(url, timeout=20)
+print(r.status_code)
+#res = r.json()
+#print(res)
 
 
 
