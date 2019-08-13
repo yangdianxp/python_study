@@ -1,9 +1,14 @@
 import requests
 
+def test():
+    for i in range(5):
+        yield i
 
+for i in test():
+    print(i)
 
-a = "{:^6d} {:^6d} {:^6d}".format(123, 456, 789)
-print(a)
+#a = "{:^6d} {:^6d} {:^6d}".format(123, 456, 789)
+#print(a)
 
 #print("Sammy ate {0:f} percent of a {1}!".format(75, "pizza"))
 
