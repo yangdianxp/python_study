@@ -1,11 +1,37 @@
+import sys
+import time
+import json
 import requests
+import json
+from datetime import datetime
+from threading import Thread
 
-def test():
-    for i in range(5):
-        yield i
+tbname="btc"
+auth_name="tom_first_bitcoin"
+auth_pass="tom123_first_bitcoin"
+rpcip="http://172.18.171.102:8301"
 
-for i in test():
-    print(i)
+def get_addr_txs(addr):
+    headers = {'Content-Type': 'application/json'}
+    data = json.dumps({"jsonrpc": "2.0", "method":"listtransactions", "params": [addr], "id":"1"})
+    auth = (auth_name, auth_pass)
+    url = rpcip
+    r = requests.post(url, data=data, auth=auth, headers=headers, timeout=20)
+    txs = r.json()["result"]
+    return txs
+
+txs = get_addr_txs("379GSpV2UTi8nY6Gh5VECiL1dcbZ381hzj")
+print(txs)
+
+
+#import requests
+
+#def test():
+#    for i in range(5):
+#        yield i
+
+#for i in test():
+#    print(i)
 
 #a = "{:^6d} {:^6d} {:^6d}".format(123, 456, 789)
 #print(a)
