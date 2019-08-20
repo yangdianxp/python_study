@@ -1,27 +1,38 @@
-import sys
-import time
-import json
-import requests
-import json
-from datetime import datetime
-from threading import Thread
+def print_key(*keys):
+    for key in keys:
+        print(key)
 
-tbname="btc"
-auth_name="tom_first_bitcoin"
-auth_pass="tom123_first_bitcoin"
-rpcip="http://172.18.171.102:8301"
 
-def get_addr_txs(addr):
-    headers = {'Content-Type': 'application/json'}
-    data = json.dumps({"jsonrpc": "2.0", "method":"listtransactions", "params": [addr], "id":"1"})
-    auth = (auth_name, auth_pass)
-    url = rpcip
-    r = requests.post(url, data=data, auth=auth, headers=headers, timeout=20)
-    txs = r.json()["result"]
-    return txs
+print_key(*[1, 2, 3])
 
-txs = get_addr_txs("379GSpV2UTi8nY6Gh5VECiL1dcbZ381hzj")
-print(txs)
+
+'''
+## 读btc等币最新交易列表
+#import sys
+#import time
+#import json
+#import requests
+#import json
+#from datetime import datetime
+#from threading import Thread
+
+#tbname="btc"
+#auth_name="tom_first_bitcoin"
+#auth_pass="tom123_first_bitcoin"
+#rpcip="http://172.18.171.102:8301"
+
+#def get_addr_txs(addr):
+#    headers = {'Content-Type': 'application/json'}
+#    data = json.dumps({"jsonrpc": "2.0", "method":"listtransactions", "params": [addr], "id":"1"})
+#    auth = (auth_name, auth_pass)
+#    url = rpcip
+#    r = requests.post(url, data=data, auth=auth, headers=headers, timeout=20)
+#    txs = r.json()["result"]
+#    return txs
+
+#txs = get_addr_txs("379GSpV2UTi8nY6Gh5VECiL1dcbZ381hzj")
+#print(txs)
+'''
 
 
 #import requests
