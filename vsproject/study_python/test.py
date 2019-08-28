@@ -1,9 +1,74 @@
-def print_key(*keys):
-    for key in keys:
-        print(key)
+#words = [
+#    'look', 'into', 'my', 'eyes', 'look', 'into', 'my', 'eyes',
+#    'the', 'eyes', 'the', 'eyes', 'the', 'eyes', 'not', 'around', 'the',
+#    'eyes', "don't", 'look', 'around', 'the', 'eyes', 'look', 'into',
+#    'my', 'eyes', "you're", 'under'
+#]
+#from collections import Counter
+#word_counts = Counter(words)
+## 出现频率最高的 3 个单词
+#top_three = word_counts.most_common(3)
+#print(top_three)
+## Outputs [('eyes', 8), ('the', 5), ('look', 4)]
+#morewords = ['yangdian']
+#word_counts.update(morewords)
+#print(word_counts['yangdian'])
+
+#a = slice(5, 50, 2)
+#s = 'HelloWorld'
+#print(a.indices(len(s)))
+#for i in range(*a.indices(len(s))):
+#    print(i)
+#    print(s[i])
 
 
-print_key(*[1, 2, 3])
+#a = slice(5, 50, 2)
+#s = 'HelloWorld'
+#print(a.indices(len(s))
+
+
+####### 0123456789012345678901234567890123456789012345678901234567890'
+#record = '....................100 .......513.25 ..........'
+#SHARES = slice(20, 23)
+#PRICE = slice(31, 37)
+#cost = int(record[SHARES]) * float(record[PRICE])
+#print(cost)
+
+
+#import heapq
+#class PriorityQueue:
+#def __init__(self):
+#self._queue = []
+#self._index = 0
+
+
+#import heapq
+
+#portfolio = [
+#{'name': 'IBM', 'shares': 100, 'price': 91.1},
+#{'name': 'AAPL', 'shares': 50, 'price': 543.22},
+#{'name': 'FB', 'shares': 200, 'price': 21.09},
+#{'name': 'HPQ', 'shares': 35, 'price': 31.75},
+#{'name': 'YHOO', 'shares': 45, 'price': 16.35},
+#{'name': 'ACME', 'shares': 75, 'price': 115.65}
+#]
+#cheap = heapq.nsmallest(3, portfolio, key=lambda s: s['price'])
+#expensive = heapq.nlargest(3, portfolio, key=lambda s: s['price'])
+#print(cheap)
+#print(expensive)
+
+#grades = [1, 2, 3 ,4, 5]
+#first, *middle, last = grades
+#print(first)
+#print(middle)
+#print(last)
+
+#def print_key(*keys):
+#    for key in keys:
+#        print(key)
+
+
+#print_key(*[1, 2, 3])
 
 
 '''
