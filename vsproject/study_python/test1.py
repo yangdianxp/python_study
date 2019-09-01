@@ -1,15 +1,62 @@
 # 例
-text = 'Today is 11/27/2012. PyCon starts 3/13/2013.'
-from calendar import month_abbr
-def change_date(m):
-    mon_name = month_abbr[int(m.group(1))]
-    return '{} {} {}'.format(m.group(2), mon_name, m.group(3))
+# Whitespace stripping
+s = ' hello world \n'
+print(s.strip())
+print(s.lstrip())
+print(s.rstrip())
 
-import re
-datepat = re.compile(r'(\d+)/(\d+)/(\d+)')
-print(datepat.sub(change_date, text))
-newtext, n = datepat.subn(r'\3-\1-\2', text)
-print(newtext, n)
+# Character stripping
+t = '-----hello====='
+print(t.lstrip('-'))
+print(t.strip('-='))
+
+
+#s1 = 'Spicy Jalape\u00f1o'
+#s2 = 'Spicy Jalapen\u0303o'
+#print(s1)
+#print(s2)
+#import unicodedata
+#t1 = unicodedata.normalize('NFC', s1)
+#t2 = unicodedata.normalize('NFC', s2)
+#print(t1 == t2)
+
+#import re
+#text2 = '''/* this is a
+#multiline comment */
+#'''
+#comment = re.compile(r'/\*(.*?)\*/', re.DOTALL)
+#print(comment.findall(text2))
+
+
+#def matchcase(word):
+#    def replace(m):
+#        text = m.group()
+#        if text.isupper():
+#            return word.upper()
+#        elif text.islower():
+#            return word.lower()
+#        elif text[0].isupper():
+#            return word.capitalize()
+#        else:
+#            return word
+#    return replace
+
+#import re
+#text = 'UPPER PYTHON, lower python, Mixed Python'
+#test_change = re.sub('python', matchcase('snake'), text, flags=re.IGNORECASE)
+#print(test_change)
+
+#text = 'Today is 11/27/2012. PyCon starts 3/13/2013.'
+#from calendar import month_abbr
+#def change_date(m):
+#    mon_name = month_abbr[int(m.group(1))]
+#    return '{} {} {}'.format(m.group(2), mon_name, m.group(3))
+
+#import re
+#datepat = re.compile(r'(\d+)/(\d+)/(\d+)')
+#print(datepat.sub(change_date, text))
+#newtext, n = datepat.subn(r'\3-\1-\2', text)
+#print(newtext, n)
 
 #import re
 #text = 'Today is 11/27/2012. PyCon starts 3/13/2013.'
