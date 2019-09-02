@@ -1,14 +1,118 @@
 # 例
-# Whitespace stripping
-s = ' hello world \n'
-print(s.strip())
-print(s.lstrip())
-print(s.rstrip())
+x = 1234
+print(bin(x))
+print(oct(x))
+print(hex(x))
+print(format(x, 'b'))
+print(format(x, 'o'))
+print(format(x, 'x'))
+x = -1234
+print(format(x, 'b'))
+print(format(x, 'x'))
+int('4d2', 16)
+int('10011010010', 2)
+# 八进制的特殊情况
+os.chmod('script.py', 0o755)
 
-# Character stripping
-t = '-----hello====='
-print(t.lstrip('-'))
-print(t.strip('-='))
+#x = 1234.56789
+## Two decimal places of accuracy
+#print(format(x, '0.2f'))
+## Right justified in 10 chars, one-digit accuracy
+#print(format(x, '>10.1f'))
+## Left justified
+#print(format(x, '<10.1f'))
+## Centered
+#print(format(x, '^10.1f'))
+## Inclusion of thousands separator
+#print(format(x, ','))
+#print(format(x, '0,.1f'))
+#print(format(x, 'e'))
+#print(format(x, '0.2E'))
+#print('The value is {:0,.2f}'.format(x))
+
+#from decimal import Decimal
+#a = Decimal('4.2')
+#b = Decimal('2.1')
+#print(a + b)
+#print((a + b) == Decimal('6.3'))
+
+#print(round(1.23, 1))
+#print(round(1.27, 1))
+#print(round(-1.27, 1))
+#print(round(1.25361,3))
+#a = 1627731
+#print(round(a, -1))
+#print(round(a, -2))
+#print(round(a, -3))
+
+#class safesub(dict):
+#    """ 防止 key 找不到 """
+#    def __missing__(self, key):
+#        return '{' + key + '}'
+
+#import sys
+#def sub(text):
+#    return text.format_map(safesub(sys._getframe(1).f_locals))
+#name = 'Guido'
+#n = 37
+#print(sub('Hello {name}'))
+#print(sub('You have {n} messages.'))
+#print(sub('Your favorite color is {color}'))
+
+
+#parts = ['Is', 'Chicago', 'Not', 'Chicago?']
+#print(' '.join(parts))
+#print(','.join(parts))
+#print(''.join(parts))
+#a = 'Hello' 'World'
+#print(a)
+#data = ['ACME', 50, 91.1]
+#print(','.join(str(d) for d in data))
+#a = 1
+#b = 2
+#c = 3
+#print(a, b, c, sep=':')
+
+
+#text = 'Hello World'
+#print(format(text, '>20'))
+#print(format(text, '<20'))
+#print(format(text, '^20'))
+#print(format(text, '=>20s'))
+#print(format(text, '*^20s'))
+#print('{:>10s} {:>10s}'.format('Hello', 'World'))
+#x = 1.2345
+#print(format(x, '>10'))
+#print(format(x, '^10.2f'))
+
+#print(text.ljust(20))
+#print(text.rjust(20))
+#print(text.center(20))
+#print(text.rjust(20,'='))
+#print(text.center(20,'*'))
+
+
+#s = ' hello       world \n'
+#s = s.strip()
+#print(s)
+#import re
+#print(re.sub('\s+', ' ', s))
+
+#with open(filename) as f:
+#    lines = (line.strip() for line in f)
+#    for line in lines:
+#        print(line)
+
+## Whitespace stripping
+#s = ' hello world \n'
+#print(s.strip())
+#print(s.lstrip())
+#print(s.rstrip())
+
+## Character stripping
+#t = '-----hello====='
+#print(t.lstrip('-'))
+#print(t.strip('-='))
 
 
 #s1 = 'Spicy Jalape\u00f1o'
@@ -27,7 +131,7 @@ print(t.strip('-='))
 #comment = re.compile(r'/\*(.*?)\*/', re.DOTALL)
 #print(comment.findall(text2))
 
-
+# todo
 #def matchcase(word):
 #    def replace(m):
 #        text = m.group()
