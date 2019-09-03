@@ -1,18 +1,365 @@
 # 例
-x = 1234
-print(bin(x))
-print(oct(x))
-print(hex(x))
-print(format(x, 'b'))
-print(format(x, 'o'))
-print(format(x, 'x'))
-x = -1234
-print(format(x, 'b'))
-print(format(x, 'x'))
-int('4d2', 16)
-int('10011010010', 2)
-# 八进制的特殊情况
-os.chmod('script.py', 0o755)
+from collections import Iterable
+def flatten(items, ignore_types=(str, bytes)):
+    for x in items:
+        if isinstance(x, Iterable) and not isinstance(x, ignore_types):
+            yield from flatten(x)
+        else:
+            yield x
+items = [1, 2, [3, 4, [5, 6], 7], 8]
+# Produces 1 2 3 4 5 6 7 8
+for x in flatten(items):
+    print(x)
+
+#import os
+#import fnmatch
+#import gzip
+#import bz2
+#import re
+
+#def gen_find(filepat, top):
+#    '''
+#    Find all filenames in a directory tree that match a shell wildcard pattern
+#    '''
+#    for path, dirlist, filelist in os.walk(top):
+#        for name in fnmatch.filter(filelist, filepat):
+#            yield os.path.join(path,name)
+
+#def gen_opener(filenames):
+#    '''
+#    Open a sequence of filenames one at a time producing a file object.
+#    The file is closed immediately when proceeding to the next iteration.
+#    '''
+#    for filename in filenames:
+#        if filename.endswith('.gz'):
+#            f = gzip.open(filename, 'rt')
+#        elif filename.endswith('.bz2'):
+#            f = bz2.open(filename, 'rt')
+#        else:
+#            f = open(filename, 'rt', encoding='UTF-8')
+#        yield f
+#        f.close()
+
+#def gen_concatenate(iterators):
+#    '''
+#    Chain a sequence of iterators together into a single sequence.
+#    '''
+#    for it in iterators:
+#        yield from it
+
+#def gen_grep(pattern, lines):
+#    '''
+#    Look for a regex pattern in a sequence of lines
+#    '''
+#    pat = re.compile(pattern)
+#    for line in lines:
+#        if pat.search(line):
+#            yield line
+
+#lognames = gen_find('*.cpp', r'E:\code\master\huibase\branches\v3s2\src')
+#files = gen_opener(lognames)
+#lines = gen_concatenate(files)
+#pylines = gen_grep('HCIp4Addr', lines)
+#for line in pylines:
+#    print(line)
+
+#from itertools import chain
+#a = [1, 2, 3, 4]
+#b = ['x', 'y', 'z']
+#for x in chain(a, b):
+#    print(x)
+
+#  zip() 会创建一个迭代器来作为结果返回
+#headers = ['name', 'shares', 'price']
+#values = ['ACME', 100, 490.1]
+#s = dict(zip(headers,values))
+#print(s)
+#for name, val in zip(headers, values):
+#    print(name, '=', val)
+#a = [1, 2, 3]
+#b = [10, 11, 12]
+#c = ['x','y','z']
+#for i in zip(a, b, c):
+#    print(i)
+
+#xpts = [1, 5, 4, 2, 10, 7]
+#ypts = [101, 78, 37, 15, 62, 99]
+#for x, y in zip(xpts, ypts):
+#    print(x,y)
+
+#a = [1, 2, 3]
+#b = ['w', 'x', 'y', 'z']
+#for i in zip(a,b):
+#    print(i)
+#from itertools import zip_longest
+#for i in zip_longest(a,b):
+#    print(i)
+#for i in zip_longest(a, b, fillvalue=0):
+#    print(i)
+
+#my_list = ['a', 'b', 'c']
+#for idx, val in enumerate(my_list):
+#    print(idx, val)
+
+#my_list = ['a', 'b', 'c']
+#for idx, val in enumerate(my_list, 1):
+#    print(idx, val)
+
+#data = [ (1, 2), (3, 4), (5, 6), (7, 8) ]
+## Correct!
+#for n, (x, y) in enumerate(data):
+#    print(n, x, y)
+
+#items = ['a', 'b', 'c']
+#from itertools import permutations
+#for p in permutations(items):
+#    print(p)
+
+#for p in permutations(items, 2):
+#    print(p)
+
+#from itertools import combinations
+#for c in combinations(items, 3):
+#    print(c)
+
+#for c in combinations(items, 2):
+#    print(c)
+
+#for c in combinations(items, 1):
+#    print(c)
+
+#from itertools import islice
+#items = ['a', 'b', 'c', 1, 4, 10, 15]
+#for x in islice(items, 3, None):
+#    print(x)
+
+#with open('/etc/passwd') as f:
+#    for line in f:
+#        print(line, end='')
+
+#from itertools import dropwhile
+#with open('/etc/passwd') as f:
+#    for line in dropwhile(lambda line: line.startswith('#'), f):
+#        print(line, end='')
+
+#def count(n):
+#    while True:
+#        yield n
+#        n += 1
+
+#c = count(0)
+#import itertools
+#for x in itertools.islice(c, 10, 20):
+#    print(x)
+
+#from collections import deque
+#class linehistory:
+#    def __init__(self, lines, histlen=3):
+#        self.lines = lines
+#        self.history = deque(maxlen=histlen)
+#    def __iter__(self):
+#        for lineno, line in enumerate(self.lines, 1):
+#            self.history.append((lineno, line))
+#            yield line
+#    def clear(self):
+#        self.history.clear()
+
+#with open('somefile.txt') as f:
+#    lines = linehistory(f)
+#    for line in lines:
+#        if 'python' in line:
+#            for lineno, hline in lines.history:
+#                print('{}:{}'.format(lineno, hline), end='')
+
+#class Countdown:
+#    def __init__(self, start):
+#        self.start = start
+#    # Forward iterator
+#    def __iter__(self):
+#        n = self.start
+#        while n > 0:
+#            yield n
+#            n -= 1
+#    # Reverse iterator
+#    def __reversed__(self):
+#        n = 1
+#        while n <= self.start:
+#            yield n
+#            n += 1
+#for rr in reversed(Countdown(30)):
+#    print(rr)
+
+#for rr in Countdown(30):
+#    print(rr)
+
+#a = [1, 2, 3, 4]
+#for x in reversed(a):
+#    print(x)
+
+#class Node:
+#    def __init__(self, value):
+#        self._value = value
+#        self._children = []
+#    def __repr__(self):
+#        return 'Node({!r})'.format(self._value)
+#    def add_child(self, node):
+#        self._children.append(node)
+#    def __iter__(self):
+#        return iter(self._children)
+#    def depth_first(self):
+#        yield self
+#        for c in self:
+#            yield from c.depth_first()
+
+## Example
+#if __name__ == '__main__':
+#    root = Node(0)
+#    child1 = Node(1)
+#    child2 = Node(2)
+#    root.add_child(child1)
+#    root.add_child(child2)
+#    child1.add_child(Node(3))
+#    child1.add_child(Node(4))
+#    child2.add_child(Node(5))
+#    for ch in root.depth_first():
+#        print(ch)
+#    # Outputs Node(0), Node(1), Node(3), Node(4), Node(2), Node(5)
+
+#def frange(start, stop, increment):
+#    x = start
+#    while x < stop:
+#        yield x
+#        x += increment
+
+#for n in frange(0, 4, 0.5):
+#    print(n)
+
+#class Node:
+#    def __init__(self, value):
+#        self._value = value
+#        self._children = []
+#    def __repr__(self):
+#        return 'Node({!r})'.format(self._value)
+#    def add_child(self, node):
+#        self._children.append(node)
+#    def __iter__(self):
+#        return iter(self._children)
+
+## Example
+#if __name__ == '__main__':
+#    root = Node(0)
+#    child1 = Node(1)
+#    child2 = Node(2)
+#    root.add_child(child1)
+#    root.add_child(child2)
+#    # Outputs Node(1), Node(2)
+#    for ch in root:
+#        print(ch)
+
+#def manual_iter():
+#    with open('/etc/passwd') as f:
+#        try:
+#            while True:
+#            line = next(f)
+#            print(line, end='')
+#        except StopIteration:
+#            pass
+
+#from datetime import datetime
+#text = '2012-09-20'
+#y = datetime.strptime(text, '%Y-%m-%d')
+#z = datetime.now()
+#diff = z - y
+#print(diff)
+#nice_z = datetime.strftime(z, '%A %B %d, %Y')
+#print(nice_z)
+
+#from datetime import timedelta
+#from datetime import datetime
+#a = datetime(2012, 9, 23)
+#print(a + timedelta(days=10))
+#b = datetime(2012, 12, 21)
+#d = b - a
+#print(d)
+#print(d.days)
+#now = datetime.today()
+#print(now)
+#print(now + timedelta(minutes=10))
+
+#from datetime import timedelta
+#a = timedelta(days=2, hours=6)
+#b = timedelta(hours=4.5)
+#c = a + b
+#print(c.days)
+#print(c.seconds)
+#print(c.seconds / 3600)
+#print(c.total_seconds() / 3600)
+
+#import random
+#values = [1, 2, 3, 4, 5, 6]
+#print(random.choice(values))
+#random.shuffle(values)
+#print(values)
+## 生成随机整数
+#print(random.randint(0,10))
+#print(random.randint(0,10))
+## 生成 0 到 1 范围内均匀分布的浮点数
+#print(random.random())
+#print(random.random())
+
+#import numpy as np
+#a = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+#print(a)
+## Select row 1
+#print(a[1])
+## Select column 1
+#print(a[:,1])
+## Select a subregion and change it
+#print(a[1:3, 1:3])
+#a[1:3, 1:3] += 10
+#print(a)
+## Broadcast a row vector across an operation on all rows
+#print(a + [100, 101, 102, 103])
+## Conditional assignment on an array
+#print(np.where(a < 10, a, 10))
+
+## Numpy arrays
+#import numpy as np
+#ax = np.array([1, 2, 3, 4])
+#ay = np.array([5, 6, 7, 8])
+#print(ax * 2)
+#print(ax + 10)
+#print(ax + ay)
+#print(ax * ay)
+#def f(x):
+#    return 3*x**2 - 2*x + 7
+
+#print(f(ax))
+
+## 字节顺序规则(little或big)仅仅指定了构建整数时的字节的低位高位排列方式
+#data = b'\x00\x124V\x00x\x90\xab\x00\xcd\xef\x01\x00#\x004'
+#len(data)
+#print(int.from_bytes(data, 'little'))
+#print(int.from_bytes(data, 'big'))
+#x = 0x010203040506
+#print(x.to_bytes(6, 'big'))
+#print(x.to_bytes(6, 'little'))
+
+
+#x = 1234
+#print(bin(x))
+#print(oct(x))
+#print(hex(x))
+#print(format(x, 'b'))
+#print(format(x, 'o'))
+#print(format(x, 'x'))
+#x = -1234
+#print(format(x, 'b'))
+#print(format(x, 'x'))
+#int('4d2', 16)
+#int('10011010010', 2)
+## 八进制的特殊情况
+#os.chmod('script.py', 0o755)
 
 #x = 1234.56789
 ## Two decimal places of accuracy
