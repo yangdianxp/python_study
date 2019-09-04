@@ -1,15 +1,159 @@
 # 例
-from collections import Iterable
-def flatten(items, ignore_types=(str, bytes)):
-    for x in items:
-        if isinstance(x, Iterable) and not isinstance(x, ignore_types):
-            yield from flatten(x)
-        else:
-            yield x
-items = [1, 2, [3, 4, [5, 6], 7], 8]
-# Produces 1 2 3 4 5 6 7 8
-for x in flatten(items):
-    print(x)
+
+
+#import shutil
+#shutil.unpack_archive('Python-3.3.0.tgz')
+#shutil.make_archive('py33','zip','Python-3.3.0')
+## 获取所有支持的归档格式列表
+#shutil.get_archive_formats()
+
+## 拷贝目录的处理方式
+#try:
+#    shutil.copytree(src, dst)
+#except shutil.Error as e:
+#    for src, dst, msg in e.args[0]:
+#        # src is source name
+#        # dst is destination name
+#        # msg is error message from exception
+#        print(dst, src, msg)
+
+#filename = '/Users/guido/programs/spam.py'
+#import os.path
+#print(os.path.basename(filename))
+#print(os.path.dirname(filename))
+#print(os.path.split(filename))
+#print(os.path.join('/new/dir', os.path.basename(filename)))
+#print(os.path.expanduser('~/guido/programs/spam.py'))
+
+#import shutil
+## Copy src to dst. (cp src dst)
+#shutil.copy(src, dst)
+## Copy files, but preserve metadata (cp -p src dst)
+#shutil.copy2(src, dst)
+## Copy directory tree (cp -R src dst)
+#shutil.copytree(src, dst)
+## Move src to dst (mv src dst)
+#shutil.move(src, dst)
+
+## 复制过程中，忽略某些文件
+#def ignore_pyc_files(dirname, filenames):
+#    return [name in filenames if name.endswith('.pyc')]
+#shutil.copytree(src, dst, ignore=ignore_pyc_files)
+
+#import os.path
+#def read_into_buffer(filename):
+#    buf = bytearray(os.path.getsize(filename))
+#    with open(filename, 'rb') as f:
+#        f.readinto(buf)
+#    return buf
+
+## Write a sample file
+#with open('sample.bin', 'wb') as f:
+#    f.write(b'Hello World')
+
+#buf = read_into_buffer('sample.bin')
+#print(buf)
+#buf[0:5] = b'Hallo'
+#print(buf)
+#with open('newsample.bin', 'wb') as f:
+#    f.write(buf)
+
+#from functools import partial
+#RECORD_SIZE = 32
+#with open('somefile.data', 'rb') as f:
+#    records = iter(partial(f.read, RECORD_SIZE), b'')
+#    for r in records:
+#        pass
+
+## gzip compression
+#import gzip
+#with gzip.open('somefile.gz', 'rt') as f:
+#    text = f.read()
+
+## bz2 compression
+#import bz2
+#with bz2.open('somefile.bz2', 'rt') as f:
+#    text = f.read()
+
+## gzip compression
+#import gzip
+#with gzip.open('somefile.gz', 'wt') as f:
+#    f.write(text)
+
+## bz2 compression
+#import bz2
+#with bz2.open('somefile.bz2', 'wt') as f:
+#    f.write(text)
+## 当写入压缩数据时，可以使用 compresslevel 这个可选的关键字参数来指定一个压缩级别
+#with gzip.open('somefile.gz', 'wt', compresslevel=5) as f:
+#    f.write(text)
+## 可以作用在一个已存在并以二进制模式打开的文件上
+## 这样就允许 gzip 和 bz2 模块可以工作在许多类文件对象上，比如套接字，
+## 管道和内存中文件等。
+#import gzip
+#f = open('somefile.gz', 'rb')
+#with gzip.open(f, 'rt') as g:
+#    text = g.read()
+
+#import io
+#s = io.StringIO()
+#s.write('Hello World\n')
+#print('This is a test', file=s)
+#print(s.getvalue())
+#s = io.StringIO('Hello\nWorld\n')
+#print(s.read(4))
+#print(s.read())
+## io.StringIO 只能用于文本   io.BytesIO操作二进制数据
+#s = io.BytesIO()
+#s.write(b'binary data')
+#print(s.getvalue())
+
+#with open('somefile', 'xt') as f:
+#    f.write('Hello\n')
+#import os
+#if not os.path.exists('somefile'):
+#    with open('somefile', 'wt') as f:
+#        f.write('Hello\n')
+#else:
+#    print('File already exists!')
+
+#print('ACME', 50, 91.5)
+#print('ACME', 50, 91.5, sep=',')
+#print('ACME', 50, 91.5, sep=',', end='!!\n')
+#for i in range(5):
+#    print(i, end=' ')
+#row = ('ACME', 50, 91.5)
+#print(*row, sep=',')
+
+# iter 函数接受一个可选的 callable 对象和一个标记 (结尾) 值作为输入参数。
+# 当以这种方式使用的时候，它会创建一个迭代器，这个迭代器会不断调用 callable 
+# 对象直到返回值和标记值相等为止。
+#import sys
+#f = open('/etc/passwd')
+#for chunk in iter(lambda: f.read(10), ''):
+#    n = sys.stdout.write(chunk)
+
+#import heapq
+#a = [1, 4, 7, 10]
+#b = [2, 5, 6, 11]
+#for c in heapq.merge(a, b):
+#    print(c)
+
+#from collections import Iterable
+#def flatten(items, ignore_types=(str, bytes)):
+#    for x in items:
+#        if isinstance(x, Iterable) and not isinstance(x, ignore_types):
+#            yield from flatten(x)
+#        else:
+#            yield x
+#items = [1, 2, [3, 4, [5, 6], 7], 8]
+## Produces 1 2 3 4 5 6 7 8
+#for x in flatten(items):
+#    print(x)
+
+#items = ['Dave', 'Paula', ['Thomas', 'Lewis']]
+#for x in flatten(items):
+#    print(x)
 
 #import os
 #import fnmatch
