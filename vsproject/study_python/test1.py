@@ -1,5 +1,98 @@
 # 例
+# 读btc等币最新交易列表
+import sys
+import time
+import json
+import requests
 
+while True:
+    print("111")
+    time.sleep(1)
+    #for i in range(10):
+    #    res = requests.get("https://data.block.cc/api/v1/tickers?market=bitfinex&symbol=BTC")
+    #    print(res.status_code)
+    #    print(res.json()["code"])
+    #    if res.status_code != 200:
+    #        exit(1)
+    #time.sleep(1800)
+    # print(res.json()["data"]["list"][0])
+
+#import xlrd
+#from datetime import timedelta
+#from datetime import datetime
+
+#workbook=xlrd.open_workbook("优先额度与转入额度异常.xlsx")
+## 获取所有sheet的名字
+#names=workbook.sheet_names()
+#print(names)
+
+##由上可知，workbook.sheet_names() 返回一个list对象，可以对这个list对象进行操作
+#sheet0_name=workbook.sheet_names()[0]
+#print(sheet0_name)
+
+## 通过sheet索引获得sheet对象
+#worksheet=workbook.sheet_by_index(0)
+#print(worksheet)
+
+## 通过sheet名获得sheet对象
+#worksheet=workbook.sheet_by_name("按用户统计最近优先额度表")
+#print(worksheet)
+
+#name=worksheet.name  #获取表的姓名
+#print(name)
+
+#nrows=worksheet.nrows  #获取该表总行数
+#print(nrows) 
+
+#ncols=worksheet.ncols  #获取该表总列数
+#print(ncols)
+
+## 按行或列方式获得工作表的数据
+## for i in range(nrows): #循环打印每一行
+##    print(worksheet.row_values(i))  #以列表形式读出，列表中的每一项是str类型
+
+##通过坐标读取表格中的数据
+##通过坐标读取表格中的数据
+#cell_value1=worksheet.cell_value(0,0)
+#cell_value2=worksheet.cell_value(1,0)
+#print(cell_value1)
+
+#import csv
+#from collections import namedtuple
+#with open('优先额度与转入额度异常.xlsx', encoding='UTF-8') as f:
+#    f_csv = csv.reader(f)
+#    headings = next(f_csv)
+#    Row = namedtuple('Row', headings)
+#    for r in f_csv:
+#        row = Row(*r)
+#        print(row)
+
+#import pickle
+#f = open('somedata', 'wb')
+#pickle.dump([1, 2, 3, 4], f)
+#pickle.dump('hello', f)
+#pickle.dump({'Apple', 'Pear', 'Banana'}, f)
+#f.close()
+#f = open('somedata', 'rb')
+#print(pickle.load(f))
+#print(pickle.load(f))
+#print(pickle.load(f))
+
+
+#import pickle
+#hsb_phone = ['13900000000', '14200000000'] # Some Python object
+#with open('hsb_phone.data', 'wb') as f:
+#   pickle.dump(hsb_phone, f) 
+
+#new_data = []
+#with open('hsb_phone.data', 'rb') as f:
+#    new_data = pickle.load(f)
+#print(new_data)
+
+
+#myList = [1, 2, 3, -1, -2]
+#result = filter(lambda x: x >= 0, myList)
+#print(list(result))
 
 #import shutil
 #shutil.unpack_archive('Python-3.3.0.tgz')
