@@ -1,21 +1,173 @@
 # 例
-# 读btc等币最新交易列表
-import sys
-import time
-import json
-import requests
+names = ["id", "name", "phone"]
+values = [[1, "wanbao", 13786135412],
+          [2, "liuliu", 15555555555]]
+for v in values:
+    print(dict(zip(names, v)))
 
-while True:
-    print("111")
-    time.sleep(1)
-    #for i in range(10):
-    #    res = requests.get("https://data.block.cc/api/v1/tickers?market=bitfinex&symbol=BTC")
-    #    print(res.status_code)
-    #    print(res.json()["code"])
-    #    if res.status_code != 200:
-    #        exit(1)
-    #time.sleep(1800)
-    # print(res.json()["data"]["list"][0])
+## 修改已经存在的工作簿(表)
+#import openpyxl
+#workbook=openpyxl.load_workbook("myfile.xlsx")
+#worksheet=workbook.worksheets[0]
+##在第一列之前插入一列
+#worksheet.insert_cols(1)  #
+ 
+#for index,row in enumerate(worksheet.rows):
+#    if index==0:
+#        row[0].value="编号"  #每一行的一个row[0]就是第一列
+#    else:
+#        row[0].value=index
+#worksheet.cell(2,3,'0')
+#worksheet["B2"]="Peking"
+#taiwan=[32,"台湾省"]
+#worksheet.append(taiwan)
+#workbook.save(filename="myfile.xlsx")
+
+
+## 使用openpyxl模块对xlsx文件进行写操作
+#import openpyxl
+## 创建一个Workbook对象，相当于创建了一个Excel文件
+#workbook=openpyxl.Workbook()
+
+##获取当前活跃的worksheet,默认就是第一个worksheet
+#worksheet = workbook.active
+#worksheet.title="mysheet"
+
+#worksheet2 = workbook.create_sheet()   #默认插在工作簿末尾
+##worksheet2 = workbook.create_sheet(0)  #插入在工作簿的第一个位置
+#worksheet2.title = "New Title"
+
+#worksheet2 = workbook.create_sheet()   #默认插在工作簿末尾
+##以下是我们要写入的数据
+#Province=['北京市', '天津市', '河北省', '山西省', '内蒙古自治区', '辽宁省',
+#          '吉林省', '黑龙江省', '上海市', '江苏省', '浙江省', '安徽省', '福建省',
+#          '江西省', '山东省', '河南省', '湖北省', '湖南省', '广东省', '广西壮族自治区',
+#          '海南省', '重庆市', '四川省', '贵州省', '云南省', '西藏自治区', '陕西省', '甘肃省',
+#          '青海省', '宁夏回族自治区', '新疆维吾尔自治区']
+ 
+#Income=['5047.4', '3247.9', '1514.7', '1374.3', '590.7', '1499.5', '605.1', '654.9',
+#        '6686.0', '3104.8', '3575.1', '1184.1', '1855.5', '1441.3', '1671.5', '1022.7',
+#        '1199.2', '1449.6', '2906.2', '972.3', '555.7', '1309.9', '1219.5', '715.5', '441.8',
+#        '568.4', '848.3', '637.4', '653.3', '823.1', '254.1']
+ 
+#Project=['各省市', '工资性收入', '家庭经营纯收入', '财产性收入', '转移性收入', '食品', '衣着',
+#         '居住', '家庭设备及服务', '交通和通讯', '文教、娱乐用品及服务', '医疗保健', '其他商品及服务']
+ 
+##写入第一行数据，行号和列号都从1开始计数
+#for i in range(len(Project)):
+#    worksheet.cell(1, i+1,Project[i])
+ 
+##写入第一列数据，因为第一行已经有数据了，i+2
+#for i in range(len(Province)):
+#    worksheet.cell(i+2,1,Province[i])
+ 
+##写入第二列数据
+#for i in range(len(Income)):
+#    worksheet.cell(i+2,2,Income[i])
+
+#workbook.save(filename='myfile.xlsx')
+
+## 使用openpyxl模块对xlsx文件进行读操作
+#import openpyxl
+##获取 工作簿对象
+#workbook=openpyxl.load_workbook("优先额度与转入额度异常.xlsx")
+##获取工作簿 workbook的所有工作表
+#shenames=workbook.sheetnames
+#print(shenames)
+##获得工作簿的表名后，就可以获得表对象
+#worksheet1=workbook[shenames[1]]
+#print(worksheet1)
+##还可以通过索引方式获取表对象
+#worksheet=workbook.worksheets[0]
+#print(worksheet)
+##获取当前活跃的worksheet,默认就是第一个worksheet
+#ws = workbook.active
+#print(ws)
+#name=worksheet.title  #获取表名
+#print(name)
+##for row in worksheet.rows:
+##    for cell in row:
+##        print(cell.value, end=" ")
+##    print()
+
+##for col in worksheet.columns:
+##    for cell in col:
+##        print(cell.value,end=" ")
+##    print()
+
+#for i in range(1, 4):
+#    for j in range(1, 9):
+#        value = worksheet.cell(row=i, column=j).value
+#        print(value, type(value), end=" ")
+#    print()
+
+##精确读取表格中的某一单元格
+#content_A1= worksheet['A1'].value
+#print(content_A1)
+
+# 获取某一块的数据
+
+
+## 使用xlwt模块对xls文件进行写操作
+
+## 导入xlwt模块
+#import xlwt
+ 
+##创建一个Workbook对象，相当于创建了一个Excel文件
+#book=xlwt.Workbook(encoding="utf-8",style_compression=0)
+ 
+#'''
+#Workbook类初始化时有encoding和style_compression参数
+#encoding:设置字符编码，一般要这样设置：w = Workbook(encoding='utf-8')，就可以在excel中输出中文了。默认是ascii。
+#style_compression:表示是否压缩，不常用。
+#'''
+
+## 创建一个sheet对象，一个sheet对象对应Excel文件中的一张表格。
+#sheet = book.add_sheet('test01', cell_overwrite_ok=True)
+## 其中的test是这张表的名字,cell_overwrite_ok，表示是否可以覆盖单元格，其实是Worksheet实例化的一个参数，默认值是False
+
+## 向表test中添加数据
+#sheet.write(0, 0, '各省市')  # 其中的'0-行, 0-列'指定表中的单元，'各省市'是向该单元写入的内容
+#sheet.write(0, 1, '工资性收入')
+
+##也可以这样添加数据
+#txt1 = '北京市'
+#sheet.write(1,0, txt1)  
+#txt2 = 5047.4
+#sheet.write(1, 1, txt2)
+
+##添加第二个表
+#sheet2=book.add_sheet("test02",cell_overwrite_ok=True)
+ 
+#Province=['北京市', '天津市', '河北省', '山西省', '内蒙古自治区', '辽宁省',
+#          '吉林省', '黑龙江省', '上海市', '江苏省', '浙江省', '安徽省', '福建省',
+#          '江西省', '山东省', '河南省', '湖北省', '湖南省', '广东省', '广西壮族自治区',
+#          '海南省', '重庆市', '四川省', '贵州省', '云南省', '西藏自治区', '陕西省', '甘肃省',
+#          '青海省', '宁夏回族自治区', '新疆维吾尔自治区']
+ 
+#Income=['5047.4', '3247.9', '1514.7', '1374.3', '590.7', '1499.5', '605.1', '654.9',
+#        '6686.0', '3104.8', '3575.1', '1184.1', '1855.5', '1441.3', '1671.5', '1022.7',
+#        '1199.2', '1449.6', '2906.2', '972.3', '555.7', '1309.9', '1219.5', '715.5', '441.8',
+#        '568.4', '848.3', '637.4', '653.3', '823.1', '254.1']
+ 
+#Project=['各省市', '工资性收入', '家庭经营纯收入', '财产性收入', '转移性收入', '食品', '衣着',
+#         '居住', '家庭设备及服务', '交通和通讯', '文教、娱乐用品及服务', '医疗保健', '其他商品及服务']
+ 
+##填入第一列
+#for i in range(0, len(Province)):
+#    sheet2.write(i+1, 0, Province[i])
+ 
+##填入第二列
+#for i in range(0,len(Income)):
+#    sheet2.write(i+1,1,Income[i])
+ 
+##填入第一行
+#for i in range(0,len(Project)):
+#    sheet2.write(0,i,Project[i])
+
+    
+## 最后，将以上操作保存到指定的Excel文件中
+#book.save('test1.xls')
 
 #import xlrd
 #from datetime import timedelta
@@ -52,10 +204,35 @@ while True:
 ##    print(worksheet.row_values(i))  #以列表形式读出，列表中的每一项是str类型
 
 ##通过坐标读取表格中的数据
-##通过坐标读取表格中的数据
 #cell_value1=worksheet.cell_value(0,0)
 #cell_value2=worksheet.cell_value(1,0)
 #print(cell_value1)
+#print(cell_value2)
+
+#cell_value1=worksheet.cell(0,0).value
+#print(cell_value1) 
+#cell_value1=worksheet.row(0)[0].value
+#print(cell_value1) 
+
+# 读btc等币最新交易列表
+#import sys
+#import time
+#import json
+#import requests
+
+#while True:
+#    print("111")
+#    time.sleep(1)
+#    #for i in range(10):
+#    #    res = requests.get("https://data.block.cc/api/v1/tickers?market=bitfinex&symbol=BTC")
+#    #    print(res.status_code)
+#    #    print(res.json()["code"])
+#    #    if res.status_code != 200:
+#    #        exit(1)
+#    #time.sleep(1800)
+#    # print(res.json()["data"]["list"][0])
+
+
 
 #import csv
 #from collections import namedtuple
