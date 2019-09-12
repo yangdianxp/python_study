@@ -1,9 +1,85 @@
 # 例
-names = ["id", "name", "phone"]
-values = [[1, "wanbao", 13786135412],
-          [2, "liuliu", 15555555555]]
-for v in values:
-    print(dict(zip(names, v)))
+
+from requests import Request, Session
+from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
+import json
+
+url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
+parameters = {
+  'start':'1',
+  'limit':'1',
+  'convert':'BTC'
+}
+headers = {
+  'Accepts': 'application/json',
+  'X-CMC_PRO_API_KEY': '1b280832-12bb-46d7-9e48-2801802ad059',
+}
+
+session = Session()
+session.headers.update(headers)
+
+try:
+  response = session.get(url, params=parameters)
+  data = json.loads(response.text)
+  print(data)
+except (ConnectionError, Timeout, TooManyRedirects) as e:
+  print(e)
+
+##session = Session()
+##session.headers.update(headers)
+
+#def get_price(bc):
+#    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
+#    parameters = {
+#        'start':'1',
+#        'limit':'1'
+#    }
+#    parameters['convert'] = bc
+#    print(parameters)
+#    headers = {
+#        'Accepts': 'application/json',
+#        'X-CMC_PRO_API_KEY': '1b280832-12bb-46d7-9e48-2801802ad059',
+#    }
+#    print(headers)
+#    try:
+#        response = requests.get(url, params=parameters, headers=headers)
+#        res = json.loads(response.text)
+#        error_code = res['status']['error_code']
+#        print(error_code)
+#        if error_code != 0:
+#            return
+#        data = res['data']
+
+#    except (ConnectionError, Timeout, TooManyRedirects) as e:
+#        print(e)
+
+#def get_price(bc):
+
+#    url = "https://api.coinmarketcap.com/v1/ticker/%s" % get_name(bc)
+#    logging.info(url)
+#    print(url)
+#    r = requests.get(url, timeout=10)
+#    resjs = r.json()
+#    #print(resjs)
+#    logging.info(resjs)
+#    en = resjs[0]
+#    price_usd = en["price_usd"]
+#    h24_volume = en["24h_volume_usd"]
+#    ffl = en["percent_change_24h"]
+
+#    return {"price": price_usd, "volume": str(float(h24_volume) / float(price_usd)), "ff": ffl}
+
+
+#types = ['BTC', 'ETH', 'BCH']
+#for t in types:
+#    get_price(t)
+
+
+#names = ["id", "name", "phone"]
+#values = [[1, "wanbao", 13786135412],
+#          [2, "liuliu", 15555555555]]
+#for v in values:
+#    print(dict(zip(names, v)))
 
 ## 修改已经存在的工作簿(表)
 #import openpyxl
