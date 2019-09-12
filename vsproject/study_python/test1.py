@@ -1,29 +1,131 @@
 # 例
+from collections import namedtuple
+City = namedtuple('City', 'name country population coordinates')
+tokyo = City('Tokyo', 'JP', 36.933, (35.689722, 139.691667))
+print(tokyo)
+print(tokyo.population)
+print(tokyo.coordinates)
+print(tokyo[1])
 
-from requests import Request, Session
-from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
-import json
+print(City._fields)
 
-url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
-parameters = {
-  'start':'1',
-  'limit':'1',
-  'convert':'BTC'
-}
-headers = {
-  'Accepts': 'application/json',
-  'X-CMC_PRO_API_KEY': '1b280832-12bb-46d7-9e48-2801802ad059',
-}
+LatLong = namedtuple('LatLong', 'lat long')
+delhi_data = ('Delhi NCR', 'IN', 21.935, LatLong(28.613889, 77.208889))
+delhi = City._make(delhi_data)
+print(delhi._asdict())
 
-session = Session()
-session.headers.update(headers)
+for key, value in delhi._asdict().items():
+    print(key + ':', value)
 
-try:
-  response = session.get(url, params=parameters)
-  data = json.loads(response.text)
-  print(data)
-except (ConnectionError, Timeout, TooManyRedirects) as e:
-  print(e)
+#print("{}/{}".format(('USA', '31195855')))
+
+#symbols = '$¢£¥€¤'
+#print(tuple(ord(symbol) for symbol in symbols))
+#import array
+#print(array.array('I', (ord(symbol) for symbol in symbols)))
+
+## 使用列表推导计算笛卡儿积
+#colors = ['black', 'white']
+#sizes = ['S', 'M', 'L']
+#tshirts = [(color, size) for color in colors for size in sizes]
+#print(tshirts)
+
+#from math import hypot
+#class Vector:
+#    def __init__(self, x=0, y=0):
+#        self.x = x
+#        self.y = y
+#    def __repr__(self):
+#        return 'Vector(%r, %r)' % (self.x, self.y)
+#    def __abs__(self):
+#        return hypot(self.x, self.y)
+#    def __bool__(self):
+#        return bool(abs(self))
+#    def __add__(self, other):
+#        x = self.x + other.x
+#        y = self.y + other.y
+#        return Vector(x, y)
+#    def __mul__(self, scalar):
+#        return Vector(self.x * scalar, self.y * scalar)
+
+#v1 = Vector(2, 4)
+#v2 = Vector(2, 1)
+#print(v1 + v2)
+#print(abs(v1))
+#print(v1 * 3)
+
+#import collections
+#Card = collections.namedtuple('Card', ['rank', 'suit'])
+#class FrenchDeck:
+#    ranks = [str(n) for n in range(2, 11)] + list('JQKA')
+#    suits = 'spades diamonds clubs hearts'.split()
+#    def __init__(self):
+#        self._cards = [Card(rank, suit) for suit in self.suits
+#                                        for rank in self.ranks]
+#    def __len__(self):
+#        return len(self._cards)
+
+#    def __getitem__(self, position):
+#        return self._cards[position]
+
+#beer_card = Card('7', 'diamonds')
+#print(beer_card)
+
+#deck = FrenchDeck()
+#len(deck)
+#print(deck[0])
+#print(deck[-1])
+
+## 随机抽取一张纸牌
+#from random import choice
+#print(choice(deck))
+#print(choice(deck))
+#print(choice(deck))
+## 自动支持切片
+#print(deck[:3])
+#print(deck[12::13])
+## 可迭代
+#for card in deck: # doctest: +ELLIPSIS
+#    print(card)
+## 反向迭代
+#for card in reversed(deck): # doctest: +ELLIPSIS
+#    print(card)
+## 可使用in 运算符
+#print(Card('Q', 'hearts') in deck)
+## 排序
+#suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)
+#def spades_high(card):
+#    rank_value = FrenchDeck.ranks.index(card.rank)
+#    return rank_value * len(suit_values) + suit_values[card.suit]
+#card_test = Card('A', 'clubs')
+#print(spades_high(card_test))
+#for card in sorted(deck, key=spades_high): # doctest: +ELLIPSIS
+#    print(card)
+
+#from requests import Request, Session
+#from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
+#import json
+
+#url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
+#parameters = {
+#  'start':'1',
+#  'limit':'1',
+#  'convert':'BTC'
+#}
+#headers = {
+#  'Accepts': 'application/json',
+#  'X-CMC_PRO_API_KEY': '1b280832-12bb-46d7-9e48-2801802ad059',
+#}
+
+#session = Session()
+#session.headers.update(headers)
+
+#try:
+#  response = session.get(url, params=parameters)
+#  data = json.loads(response.text)
+#  print(data)
+#except (ConnectionError, Timeout, TooManyRedirects) as e:
+#  print(e)
 
 ##session = Session()
 ##session.headers.update(headers)
