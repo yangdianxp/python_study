@@ -1,21 +1,31 @@
 # 例
-from collections import namedtuple
-City = namedtuple('City', 'name country population coordinates')
-tokyo = City('Tokyo', 'JP', 36.933, (35.689722, 139.691667))
-print(tokyo)
-print(tokyo.population)
-print(tokyo.coordinates)
-print(tokyo[1])
+l = list(range(10))
+print(l)
+l[2:5] = [20, 30]
+del l[5:7]
+print(l)
+l[3::2] = [11, 22]
+print(l)
+l[2:5] = [100]
+print(l)
 
-print(City._fields)
+#from collections import namedtuple
+#City = namedtuple('City', 'name country population coordinates')
+#tokyo = City('Tokyo', 'JP', 36.933, (35.689722, 139.691667))
+#print(tokyo)
+#print(tokyo.population)
+#print(tokyo.coordinates)
+#print(tokyo[1])
 
-LatLong = namedtuple('LatLong', 'lat long')
-delhi_data = ('Delhi NCR', 'IN', 21.935, LatLong(28.613889, 77.208889))
-delhi = City._make(delhi_data)
-print(delhi._asdict())
+#print(City._fields)
 
-for key, value in delhi._asdict().items():
-    print(key + ':', value)
+#LatLong = namedtuple('LatLong', 'lat long')
+#delhi_data = ('Delhi NCR', 'IN', 21.935, LatLong(28.613889, 77.208889))
+#delhi = City._make(delhi_data)
+#print(delhi._asdict())
+
+#for key, value in delhi._asdict().items():
+#    print(key + ':', value)
 
 #print("{}/{}".format(('USA', '31195855')))
 
