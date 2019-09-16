@@ -1,12 +1,11 @@
 # 例
+import collections
 ct = collections.Counter('abracadabra')
-ct
-Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
+print("====>1:", ct)
 ct.update('aaaaazzz')
-ct
-Counter({'a': 10, 'z': 3, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
-ct.most_common(2)
-[('a', 10), ('z', 3)]
+print("====>2:", ct)
+print("====>3:", ct.most_common(2))
+
 
 ## 处理键不存在的情况
 #import sys
