@@ -1,13 +1,73 @@
 # 例
-l = list(range(10))
-print(l)
-l[2:5] = [20, 30]
-del l[5:7]
-print(l)
-l[3::2] = [11, 22]
-print(l)
-l[2:5] = [100]
-print(l)
+ct = collections.Counter('abracadabra')
+ct
+Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
+ct.update('aaaaazzz')
+ct
+Counter({'a': 10, 'z': 3, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
+ct.most_common(2)
+[('a', 10), ('z', 3)]
+
+## 处理键不存在的情况
+#import sys
+#import re
+#import collections
+#WORD_RE = re.compile(r'\w+')
+#index = collections.defaultdict(list)
+#with open(sys.argv[1], encoding='utf-8') as fp:
+#    for line_no, line in enumerate(fp, 1):
+#        for match in WORD_RE.finditer(line):
+#            word = match.group()
+#            column_no = match.start()+1
+#            location = (line_no, column_no)
+#            index[word].append(location)
+## 以字母顺序打印出结果
+#for word in sorted(index, key=str.upper):
+#    print(word, index[word])
+
+#import sys
+#import re
+#WORD_RE = re.compile(r'\w+')
+#index = {}
+#with open(sys.argv[1], encoding='utf-8') as fp:
+#    for line_no, line in enumerate(fp, 1):
+#        for match in WORD_RE.finditer(line):
+#            word = match.group()
+#            column_no = match.start()+1
+#            location = (line_no, column_no)
+#            index.setdefault(word, []).append(location)
+## 以字母顺序打印出结果
+#for word in sorted(index, key=str.upper):
+#    print(word, index[word])
+
+#import sys
+#import re
+#WORD_RE = re.compile(r'\w+')
+#index = {}
+#with open(sys.argv[1], encoding='utf-8') as fp:
+#    for line_no, line in enumerate(fp, 1):
+#        for match in WORD_RE.finditer(line):
+#            word = match.group()
+#            column_no = match.start()+1
+#            location = (line_no, column_no)
+#            # 这其实是一种很不好的实现，这样写只是为了证明论点
+#            occurrences = index.get(word, [])
+#            occurrences.append(location)
+#            index[word] = occurrences
+## 以字母顺序打印出结果
+#for word in sorted(index, key=str.upper):
+#    print(word, index[word])
+
+
+#l = list(range(10))
+#print(l)
+#l[2:5] = [20, 30]
+#del l[5:7]
+#print(l)
+#l[3::2] = [11, 22]
+#print(l)
+#l[2:5] = [100]
+#print(l)
 
 #from collections import namedtuple
 #City = namedtuple('City', 'name country population coordinates')
