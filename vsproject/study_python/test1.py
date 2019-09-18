@@ -1,10 +1,56 @@
 # 例
-import collections
-ct = collections.Counter('abracadabra')
-print("====>1:", ct)
-ct.update('aaaaazzz')
-print("====>2:", ct)
-print("====>3:", ct.most_common(2))
+
+
+#import random
+#class BingoCage:
+#    def __init__(self, items):
+#        self._items = list(items)
+#        random.shuffle(self._items)
+#    def pick(self):
+#        try:
+#            return self._items.pop()
+#        except IndexError:
+#            raise LookupError('pick from empty BingoCage')
+#    def __call__(self):
+#        return self.pick()
+
+#bingo = BingoCage(range(3))
+#print("====>1:", bingo.pick())
+#print("====>2:", bingo())
+#print("====>3:", callable(bingo))
+
+#city = 'São Paulo'
+#print("====>1:", city.encode('utf_8')) # ➊
+#city.encode('utf_16')
+#city.encode('iso8859_1') # ➋
+#city.encode('cp437') # ➌
+#return codecs.charmap_encode(input,errors,encoding_map)
+#UnicodeEncodeError: 'charmap' codec can't encode character '\xe3' in
+#position 1: character maps to <undefined>
+#city.encode('cp437', errors='ignore') # ➍
+#b'So Paulo'
+#city.encode('cp437', errors='replace') # ➎
+#b'S?o Paulo'
+#city.encode('cp437', errors='xmlcharrefreplace') # ➏
+#b'São Paulo
+
+#import struct
+#fmt = '<3s3sHH' # ➊
+#with open('giphy.gif', 'rb') as fp:
+#    img = memoryview(fp.read()) # ➋
+
+#header = img[:10] # ➌
+#print("====>1:", bytes(header)) # ➍
+#print("====>2:", struct.unpack(fmt, header)) # ➎
+#del header # ➏
+#del img
+
+#import collections
+#ct = collections.Counter('abracadabra')
+#print("====>1:", ct)
+#ct.update('aaaaazzz')
+#print("====>2:", ct)
+#print("====>3:", ct.most_common(2))
 
 
 ## 处理键不存在的情况
