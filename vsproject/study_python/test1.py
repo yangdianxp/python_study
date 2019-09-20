@@ -1,24 +1,169 @@
 # 例 
-registry = set() #➊
-def register(active=True): #➋
-    def decorate(func): #➌
-        print('running register(active=%s)->decorate(%s)'
-            % (active, func))
-        if active: #➍
-            registry.add(func)
-        else:
-            registry.discard(func) #➎
-        return func #➏
-    return decorate #➐
+t1 = (1, 2, [30, 40])
+t2 = (1, 2, [30, 40])
+print("====>1:", id(t1))
+print("====>2:", id(t2))
+print("====>3:", id(t1[-1]))
+print("====>4:", id(t2[-1]))
 
-@register(active=False) #➑
-def f1():
-    print('running f1()')
-@register() #➒
-def f2():
-    print('running f2()')
-def f3():
-    print('running f3()')
+t1[-1].append(50)
+print("====>5:", id(t1))
+print("====>6:", t1)
+
+#class Cheese:
+#    def __init__(self, kind):
+#        self.kind = kind
+#    def __repr__(self):
+#        return 'Cheese(%r)' % self.kind
+
+#import weakref
+#stock = weakref.WeakValueDictionary()
+#catalog = [Cheese('Red Leicester'), Cheese('Tilsit'),
+#            Cheese('Brie'), Cheese('Parmesan')]
+
+#for cheese in catalog:
+#    stock[cheese.kind] = cheese
+
+#print("====>0:", cheese)
+#print("====>1:", sorted(stock.keys()))
+#del catalog
+#print("====>2:", sorted(stock.keys()))
+#del cheese
+#print("====>3:", sorted(stock.keys()))
+
+#!/usr/bin/python3
+ 
+#import smtplib
+#from email.mime.text import MIMEText
+#from email.header import Header
+#import time
+ 
+## 第三方 SMTP 服务
+#mail_host="smtp.163.com"  #设置服务器
+#mail_user="yangdianxp@163.com"    #用户名
+#mail_pass="mfkdwjtj123"   #口令 
+ 
+ 
+#sender = 'yangdianxp@163.com'
+#receivers = '313342505@qq.com'  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
+ 
+#message = MIMEText('邮件发送通知', 'plain', 'utf-8')
+#message['From'] = sender
+#message['To'] =  receivers
+ 
+#send_time = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time()))
+#subject = '发送通知' + send_time
+#message['Subject'] = subject
+ 
+ 
+#try:
+#    smtpObj = smtplib.SMTP() 
+#    smtpObj.connect(mail_host, 25)    # 25 为 SMTP 端口号
+#    smtpObj.login(mail_user,mail_pass)
+#    smtpObj.sendmail(sender, [receivers], message.as_string())
+#    print ("邮件发送成功")
+#except Exception as result:
+#    print(result)
+
+#import smtplib
+#from email.mime.text import MIMEText
+#from email.header import Header
+ 
+#sender = 'from@runoob.com'
+#receivers = ['yangdianxp@163.com']  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
+ 
+## 三个参数：第一个为文本内容，第二个 plain 设置文本格式，第三个 utf-8 设置编码
+#message = MIMEText('Python 邮件发送测试...', 'plain', 'utf-8')
+#message['From'] = Header("菜鸟教程", 'utf-8')     # 发送者
+#message['To'] =  Header("测试", 'utf-8')          # 接收者
+ 
+#subject = 'Python SMTP 邮件测试'
+#message['Subject'] = Header(subject, 'utf-8')
+ 
+ 
+#try:
+#    smtpObj = smtplib.SMTP('localhost')
+#    smtpObj.sendmail(sender, receivers, message.as_string())
+#    print ("邮件发送成功")
+#except smtplib.SMTPException:
+#    print ("Error: 无法发送邮件")
+
+#import copy
+#class Bus:
+#    def __init__(self, passengers=None):
+#        if passengers is None:
+#            self.passengers = []
+#        else:
+#            self.passengers = list(passengers)
+            
+#    def pick(self, name):
+#        self.passengers.append(name)
+
+#    def drop(self, name):
+#        self.passengers.remove(name)
+
+
+#bus1 = Bus(['Alice', 'Bill', 'Claire', 'David'])
+#bus2 = copy.copy(bus1)
+#bus3 = copy.deepcopy(bus1)
+#print("====>1:", id(bus1), id(bus2), id(bus3))
+#bus1.drop('Bill')
+#print("====>2:", bus2.passengers)
+#print("====>3:", id(bus1.passengers), id(bus2.passengers), id(bus3.passengers))
+#print("====>4:", bus3.passengers)
+
+#l1 = [3, [55, 44], (7, 8, 9)]
+#l2 = list(l1)
+#print("====>1", id(l1))
+#print("====>2", id(l2))
+#print("====>3", id(l1[1]))
+#print("====>4", id(l2[1]))
+
+
+#t1 = []
+#t2 = []
+#print(id(t1))
+#print(id(t2))
+
+#t1 = (1, 2, [30, 40])
+#t2 = (1, 2, [30, 40])
+#print(id(t1[-1]))
+#print(id(t2[-1]))
+
+#a_l = [1, 2]
+#a_t = (1, 2, 3)
+#b_d = {}
+#b_d[a_t] = 3
+#print(b_d)
+
+#def func():
+#    a = 0
+#    b = 1 
+#    d = 4
+#    print(locals())
+
+#func()
+
+#registry = set() #➊
+#def register(active=True): #➋
+#    def decorate(func): #➌
+#        print('running register(active=%s)->decorate(%s)'
+#            % (active, func))
+#        if active: #➍
+#            registry.add(func)
+#        else:
+#            registry.discard(func) #➎
+#        return func #➏
+#    return decorate #➐
+
+#@register(active=False) #➑
+#def f1():
+#    print('running f1()')
+#@register() #➒
+#def f2():
+#    print('running f2()')
+#def f3():
+#    print('running f3()')
 
 #from functools import singledispatch
 #from collections import abc
