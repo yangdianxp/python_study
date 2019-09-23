@@ -1,14 +1,84 @@
 # 例 
-t1 = (1, 2, [30, 40])
-t2 = (1, 2, [30, 40])
-print("====>1:", id(t1))
-print("====>2:", id(t2))
-print("====>3:", id(t1[-1]))
-print("====>4:", id(t2[-1]))
+class Demo:
+    @classmethod
+    def klassmeth(*args):
+        return args # ➊
 
-t1[-1].append(50)
-print("====>5:", id(t1))
-print("====>6:", t1)
+    @staticmethod
+    def statmeth(*args):
+        return args # ➋
+
+print("====>1:", Demo.klassmeth()) # ➌
+print("====>2:", Demo.klassmeth('spam'))
+print("====>3:", Demo.statmeth()) # ➍
+print("====>4:", Demo.statmeth('spam'))
+
+#from array import array
+#import math
+
+#class Vector2d:
+#    typecode = 'd'
+
+#    @classmethod # ➊
+#    def frombytes(cls, octets): # ➋
+#        typecode = chr(octets[0]) # ➌
+#        memv = memoryview(octets[1:]).cast(typecode) # ➍
+#        return cls(*memv) # ➎
+
+#    def __init__(self, x, y):
+#        self.x = float(x)
+#        self.y = float(y)
+
+#    def __iter__(self):
+#        return (i for i in (self.x, self.y))
+
+#    def __repr__(self):
+#        class_name = type(self).__name__
+#        return '{}({!r}, {!r})'.format(class_name, *self)
+
+#    def __str__(self):
+#        return str(tuple(self)) 
+
+#    def __bytes__(self):
+#        return (bytes([ord(self.typecode)]) +
+#            bytes(array(self.typecode, self)))
+
+#    def __eq__(self, other):
+#        return tuple(self) == tuple(other)
+    
+#    def __abs__(self):
+#        return math.hypot(self.x, self.y)
+    
+#    def __bool__(self):
+#        return bool(abs(self))
+
+#v1 = Vector2d(3, 4)
+#print("====>1:", v1.x, v1.y)
+#x, y = v1
+#print("====>2:", x, y)
+#print("====>3:", v1)
+#v1_clone = eval(repr(v1))
+#print("====>4:", v1 == v1_clone)
+#print(v1)
+#octets = bytes(v1)
+#print("====>5:", octets)
+#print("====>6:", abs(v1))
+#print("====>7:", bool(v1), bool(Vector2d(0, 0)))
+#v2 = Vector2d.frombytes(octets)
+#print("====8:", v2)
+
+
+
+#t1 = (1, 2, [30, 40])
+#t2 = (1, 2, [30, 40])
+#print("====>1:", id(t1))
+#print("====>2:", id(t2))
+#print("====>3:", id(t1[-1]))
+#print("====>4:", id(t2[-1]))
+
+#t1[-1].append(50)
+#print("====>5:", id(t1))
+#print("====>6:", t1)
 
 #class Cheese:
 #    def __init__(self, kind):
