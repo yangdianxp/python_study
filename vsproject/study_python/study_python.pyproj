@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>314807ba-6f1e-47dc-80f2-e32db59d0d93</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>test1.py</StartupFile>
+    <StartupFile>test2.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -182,6 +182,7 @@
     <Compile Include="reptile\test.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="test2.py" />
     <Compile Include="urllib_study.py">
       <SubType>Code</SubType>
     </Compile>
