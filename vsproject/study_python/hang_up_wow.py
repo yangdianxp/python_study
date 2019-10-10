@@ -10,6 +10,7 @@ import requests
 import sys
 import json
 import base64
+import re
 
 VK_CODE = {
     'backspace':0x08,
@@ -257,26 +258,30 @@ def key_autinput(str=''):#自动识别上档键和下档建并输出
     #str = '~!@#$a%^d&*(s)_s+{}f|":h?><ABCD'
     #key_autinput(str)
 
+def match_string(find_str, target_str):
+    res = bool(re.search(find_str, target_str))
+    return res
+
 if __name__ == "__main__":
-    image = ImageGrab.grab()
-    print(image.size)
-    width = image.size[0]
-    height = image.size[1]
+    #image = ImageGrab.grab()
+    #print(image.size)
+    #width = image.size[0]
+    #height = image.size[1]
 
-    #box = (int(width / 5 * 2), int(height / 5 * 2), int(width / 5 * 3), int(height / 5 * 4))
-    #print(box)
-    #region = image.crop(box)
-    #region.show()
+    ##box = (int(width / 5 * 2), int(height / 5 * 2), int(width / 5 * 3), int(height / 5 * 4))
+    ##print(box)
+    ##region = image.crop(box)
+    ##region.show()
 
-    region = image
+    #region = image
 
-    output_buffer = BytesIO()
-    region.save(output_buffer, format='png')
-    binary_data = output_buffer.getvalue()
-    binary_data = base64.b64encode(binary_data)
+    #output_buffer = BytesIO()
+    #region.save(output_buffer, format='png')
+    #binary_data = output_buffer.getvalue()
+    #binary_data = base64.b64encode(binary_data)
 
-    #f = open(r'C:\Users\Administrator\Desktop\picture\1570447874(1).png', 'rb')
-    #binary_data = base64.b64encode(f.read())
+    f = open(r'C:\Users\Administrator\Desktop\picture\1570447874(1).png', 'rb')
+    binary_data = base64.b64encode(f.read())
 
     """ 你的 APPID AK SK """
     APP_ID = '17455795'
@@ -293,10 +298,41 @@ if __name__ == "__main__":
     #token = '24.36bd551d0bff8e5a746f670bf04ccac7.2592000.1573054545.282335-17455795'
 
     url = 'https://aip.baidubce.com/rest/2.0/ocr/v1/general?access_token=' + token
+    # url = 'https://aip.baidubce.com/rest/2.0/ocr/v1/accurate?access_token=' + token
     data = {"image": binary_data}
     headers = {'Content-Type':'application/x-www-form-urlencoded'}
     res = requests.post(url, headers=headers, data=data)
     print(res.status_code)
     print(res.json())
 
+    #word_location = {}
+    #words_result = res.json()['words_result']
+    #for w in words_result:
+    #    if match_string("邮箱帐号或手机号码", w['words']):
+    #        word_location["邮箱帐号或手机号码"] = w["location"]
+    #    elif match_string("输入密码", w['words']):
+    #        word_location["输入密码"] = w["location"]
+    #    elif match_string("免登录", w['words']):
+    #        word_location["免登录"] = w["location"] 
+    #    elif match_string("登录", w['words']):
+    #        word_location["登录"] = w["location"] 
 
+    #print(word_location)
+
+    ## 修饰鼠标点击位置
+    #mouse_click_location = {}
+    #for w in word_location.keys():
+    #    x_pos = int(word_location[w]["left"] + word_location[w]["width"] / 2)
+    #    y_pos = int(word_location[w]["top"] + word_location[w]["height"] / 2)
+    #    mouse_click_location[w] = (x_pos, y_pos)
+    #print(mouse_click_location)
+        
+    ## 邮箱账号
+    #account = "yangdianxp"
+    #passwd = "sbaukoige"
+    #mouse_click(mouse_click_location["邮箱帐号或手机号码"][0], mouse_click_location["邮箱帐号或手机号码"][1])
+    #key_autinput(account)
+    #mouse_click(mouse_click_location["输入密码"][0], mouse_click_location["输入密码"][1])
+    #key_autinput(passwd)
+    #mouse_click(mouse_click_location["免登录"][0], mouse_click_location["免登录"][1])  
+    #mouse_click(mouse_click_location["登录"][0], mouse_click_location["登录"][1]) 
